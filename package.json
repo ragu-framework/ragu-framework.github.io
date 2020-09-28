@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Ragu Framework Github Pages",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "build": "echo 'ok'",
     "dev": "superstatic pages --host 0.0.0.0 --port 8000"
   },
