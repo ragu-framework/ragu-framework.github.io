@@ -1,0 +1,19 @@
+{
+  "name": "ragu-framework.github.io",
+  "version": "1.0.0",
+  "description": "Ragu Framework Github Pages",
+  "scripts": {
+    "test": "jest",
+    "build": "echo 'ok'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ragu-framework/ragu-framework.github.io.git"
+  },
+  "author": "Maniero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ragu-framework/ragu-framework.github.io/issues"
+  },
+  "homepage": "https://github.com/ragu-framework/ragu-framework.github.io#readme"
+}
