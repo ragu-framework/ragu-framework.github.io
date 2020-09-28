@@ -1,4 +1,4 @@
-require('pages/components/navigation/main-menu/hamburger-menu');
+require('./hamburger-menu');
 
 describe('Hamburger Menu', () => {
   it('calls toggle with true when menu is closed', (done) => {
