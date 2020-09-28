@@ -1,13 +1,30 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ragu Framework</title>
-</head>
-<body>
-    Hello, World!
-</body>
+    <script src="components/navigation/main-menu/hamburger-menu.js"></script>
+    <script src="components/navigation/main-menu/main-menu.js"></script>
+    <script src="components/navigation/main-content.js"></script>
+    <script src="components/logo/logo.js"></script>
+    <link rel="stylesheet" href="style/variables.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Poppins:wght@300;500&display=swap"
+          rel="stylesheet">
+  </head>
+  <body>
+    <main-menu>
+      <a href="">Home</a>
+      <a href="">Get Started</a>
+      <a href="">Wiki</a>
+    </main-menu>
+    <main-content>
+      <logo-component>
+        <h1 slot="title">Ragu</h1>
+        <h2 slot="sub-title">Slice your front-end</h2>
+      </logo-component>
+    </main-content>
+  </body>
 </html>

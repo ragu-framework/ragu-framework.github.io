@@ -4,7 +4,8 @@
   "description": "Ragu Framework Github Pages",
   "scripts": {
     "test": "jest",
-    "build": "echo 'ok'"
+    "build": "echo 'ok'",
+    "dev": "superstatic pages --host 0.0.0.0 --port 8000"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/ragu-framework/ragu-framework.github.io/issues"
   },
-  "homepage": "https://github.com/ragu-framework/ragu-framework.github.io#readme"
+  "homepage": "https://github.com/ragu-framework/ragu-framework.github.io#readme",
+  "dependencies": {
+    "jest": "^26.4.2",
+    "superstatic": "^7.0.1"
+  }
 }
