@@ -4,7 +4,8 @@
   "description": "Ragu Framework Github Pages",
   "scripts": {
     "test": "jest --verbose",
-    "build": "webpack",
+    "build": "webpack --config webpack.config.prod.js",
+    "static:server": "superstatic dist",
     "dev": "webpack-dev-server"
   },
   "repository": {
