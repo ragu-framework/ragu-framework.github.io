@@ -6,6 +6,7 @@ class MainMenu extends HTMLElement {
         width: 100%;
         top: 0;
         left: 0;
+        background: white;
       }
 
       header {
