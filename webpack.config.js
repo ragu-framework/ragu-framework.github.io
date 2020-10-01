@@ -2,9 +2,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './pages/index.js',
+  entry: path.join(__dirname, './pages/index.js'),
   plugins: [new HtmlWebpackPlugin({
-    template: "./pages/index.html"
+    template: path.join(__dirname, "./pages/index.html")
   })],
   module: {
     rules: [
