@@ -1,3 +1,6 @@
+import logo from './logo.png';
+
+
 class Logo extends HTMLElement {
   connectedCallback() {
     const shadowRoot = this.attachShadow({mode: 'open'});
@@ -30,7 +33,7 @@ class Logo extends HTMLElement {
         }
       </style>
       <section>
-        <img src="images/logo.png" alt="Ragu Logo" width="106" height="106">
+        <img src="${logo}" alt="Ragu Logo" width="106" height="106">
         <div class="logo-lettering">
           <slot name="title"></slot> 
           <slot name="sub-title"></slot>

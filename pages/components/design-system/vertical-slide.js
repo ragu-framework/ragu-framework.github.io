@@ -1,3 +1,5 @@
+import {StyleSlot} from "./style-slot";
+
 class VerticalSlide extends StyleSlot {
   template = `
     <div class="scroller">

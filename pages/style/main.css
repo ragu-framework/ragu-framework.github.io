@@ -19,11 +19,11 @@ p {
     line-height: 1.375;
 }
 
-.info-section {
+.infoSection {
     margin: 60px 0;
 }
 
-.info-section__details h3 {
+.infoSection__details h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 1.125rem;

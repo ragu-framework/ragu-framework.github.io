@@ -1,4 +1,4 @@
-class StyleSlot extends HTMLElement {
+export class StyleSlot extends HTMLElement {
   template = `
     <slot></slot>
   `;

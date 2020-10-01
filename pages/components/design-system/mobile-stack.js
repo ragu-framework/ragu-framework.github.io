@@ -1,3 +1,5 @@
+import {StyleSlot} from "./style-slot";
+
 class MobileStack extends StyleSlot {
   get styleTemplate() {
     return `
