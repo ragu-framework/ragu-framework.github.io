@@ -11,6 +11,7 @@
     <script src="components/navigation/main-content.js"></script>
     <script src="components/design-system/style-slot.js"></script>
     <script src="components/design-system/mobile-stack.js"></script>
+    <script src="components/design-system/vertical-slide.js"></script>
     <script src="components/design-system/logo/logo.js"></script>
     <script src="components/design-system/buttons/primary-button.js"></script>
     <script src="components/design-system/buttons/secondary-button.js"></script>
@@ -54,6 +55,29 @@
         <p>To use a micro-frontend exposed by Ragu Server is easy as it. Ragu handles all dependency fetching.</p>
 
         <code-block>&lt;ragu-component src=&quot;http://ragu-server.domain.com/components/my-component/&quot;&gt;&lt;/ragu-component&gt;</code-block>
+      </section>
+
+      <section class="info-section">
+        <h2>
+          Why to use?
+        </h2>
+
+        <vertical-slide>
+          <div class="info-section__details">
+            <h3>🚀 Server Side Rendering</h3>
+            <p>Ragu micro-frontends can be exported rendered at the server side improving the user experience and the load time.</p>
+          </div>
+
+          <div class="info-section__details">
+            <h3>📦 Build System</h3>
+            <p>Ragu Server comes with a build system on top of webpack which you can extend though the ragu server configuration.</p>
+          </div>
+
+          <div class="info-section__details">
+            <h3>🤝 Coupleless Integration</h3>
+            <p>Share code using private npm package requires project build to apply changes. Ragu enable independent deployment.</p>
+          </div>
+        </vertical-slide>
       </section>
     </main-content>
   </body>
