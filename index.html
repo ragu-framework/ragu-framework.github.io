@@ -10,12 +10,15 @@
     <script src="components/navigation/main-menu/main-menu.js"></script>
     <script src="components/navigation/main-content.js"></script>
     <script src="components/design-system/style-slot.js"></script>
+    <script src="components/design-system/mobile-stack.js"></script>
     <script src="components/design-system/logo/logo.js"></script>
     <script src="components/design-system/buttons/primary-button.js"></script>
     <script src="components/design-system/buttons/secondary-button.js"></script>
     <script src="components/design-system/buttons/button-set.js"></script>
+    <script src="components/design-system/code/code-block.js"></script>
     <link rel="stylesheet" href="style/variables.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Poppins:wght@300;500&display=swap"
+    <link rel="stylesheet" href="style/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Poppins:wght@300;500&display=swap&family=Source+Code+Pro:ital,wght@1,300"
           rel="stylesheet">
   </head>
   <body>
@@ -25,21 +28,33 @@
       <a href="">Wiki</a>
     </main-menu>
     <main-content>
-      <logo-component>
-        <h1 slot="title">Ragu</h1>
-        <h2 slot="sub-title">Slice your front-end</h2>
-      </logo-component>
+      <mobile-stack>
+        <logo-component>
+          <h1 slot="title">Ragu</h1>
+          <h2 slot="sub-title">Slice your front-end</h2>
+        </logo-component>
 
-      <div>
-        <button-set max-width="400px">
-          <primary-button>
-            <a href="">Get started</a>
-          </primary-button>
-          <secondary-button>
-            <a href="https://github.com/ragu-framework/ragu">Github</a>
-          </secondary-button>
-        </button-set>
-      </div>
+        <div>
+          <button-set max-width="400px">
+            <primary-button>
+              <a href="">Get started</a>
+            </primary-button>
+            <secondary-button>
+              <a href="https://github.com/ragu-framework/ragu">Github</a>
+            </secondary-button>
+          </button-set>
+        </div>
+      </mobile-stack>
+
+      <section class="info-section">
+        <h2>
+          Using a Micro-frontend
+        </h2>
+
+        <p>To use a micro-frontend exposed by Ragu Server is easy as it. Ragu handles all dependency fetching.</p>
+
+        <code-block>&lt;ragu-component src=&quot;http://ragu-server.domain.com/components/my-component/&quot;&gt;&lt;/ragu-component&gt;</code-block>
+      </section>
     </main-content>
   </body>
 </html>

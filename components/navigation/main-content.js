@@ -8,9 +8,10 @@ class MainContent extends HTMLElement {
     shadowRoot.innerHTML = `
       <style>
         :host {
-           margin-top: 85px;
+           margin: 85px auto 20px;
            display: block;
            padding: 0 20px;
+           max-width: 920px;
         }
       </style>
       <slot></slot>

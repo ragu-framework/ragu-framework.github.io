@@ -20,7 +20,7 @@ class Logo extends HTMLElement {
         }
         ::slotted(h1) {
           font-family: var(--main-title-font-family), sans-serif;
-          font-size: 3rem;
+          font-size: 4rem;
         }
         ::slotted(h2) {
           font-family: var(--secondary-title-font-family), sans-serif;
