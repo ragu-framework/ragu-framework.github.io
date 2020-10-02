@@ -1,4 +1,4 @@
-class MainMenu extends HTMLElement {
+export class MainMenu extends HTMLElement {
   template = `
     <style>
       :host {

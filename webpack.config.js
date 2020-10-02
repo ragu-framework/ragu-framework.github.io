@@ -2,9 +2,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, './pages/index.js'),
+  entry: {
+    index: path.join(__dirname, './src/route/index.js')
+  },
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components/'),
+      '@pages': path.resolve(__dirname, 'src/pages/'),
+      '@style': path.resolve(__dirname, 'src/style/'),
+    }
+  },
   plugins: [new HtmlWebpackPlugin({
-    template: path.join(__dirname, "./pages/index.html")
+    template: path.join(__dirname, './src/template.html')
   })],
   module: {
     rules: [
@@ -37,9 +46,12 @@ module.exports = {
       },
     ]
   },
+  output: {
+    filename: '[name].[contenthash].js',
+  },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-      compress: true,
-      port: 9000
+    compress: true,
+    port: 9000
   }
 };

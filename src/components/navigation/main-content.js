@@ -1,4 +1,4 @@
-class MainContent extends HTMLElement {
+export class MainContent extends HTMLElement {
   constructor() {
     super();
   }
