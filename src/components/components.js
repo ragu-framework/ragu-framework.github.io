@@ -3,7 +3,7 @@ const classToNameComponentRegistry = {
 
 export const elementNameOfComponent = (componentClass) => {
   if (!classToNameComponentRegistry[componentClass]) {
-    classToNameComponentRegistry[componentClass] = `ragu-${componentClass.name.toLowerCase()}-${Date.now()}`;
+    classToNameComponentRegistry[componentClass] = `ragu-${componentClass.name.toLowerCase()}-${Math.random() * 1000000}`;
   }
 
   return classToNameComponentRegistry[componentClass];
