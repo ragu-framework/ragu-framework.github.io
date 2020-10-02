@@ -24,7 +24,7 @@ export const render = (componentClass, content = '', attributes = {}) => {
 export class BaseComponent extends HTMLElement {
   connectedCallback() {
     this.attachShadow({mode: "open"});
-    this.shadowRoot.innerHTML = `<style>${this.css?.toString()}</style>${this.render()}`
+    this.shadowRoot.innerHTML = `${this.render()}`
   }
 
   render() {
