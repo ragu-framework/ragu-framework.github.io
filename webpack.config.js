@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
+
 
 module.exports = {
   entry: {
@@ -12,9 +14,12 @@ module.exports = {
       '@style': path.resolve(__dirname, 'src/style/'),
     }
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: path.join(__dirname, './src/template.html')
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, './src/template.html')
+    }),
+    new ErrorOverlayPlugin()
+  ],
   module: {
     rules: [
       {
