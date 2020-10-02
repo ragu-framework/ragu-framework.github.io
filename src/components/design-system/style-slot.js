@@ -1,7 +1,11 @@
-export class StyleSlot extends HTMLElement {
-  template = `
-    <slot></slot>
-  `;
+import {BaseComponent} from "@components/components";
+
+export class StyleSlot extends BaseComponent {
+  get template() {
+    return `
+      <slot></slot>
+    `;
+  }
 
   connectedCallback() {
     this.attachShadow({mode: "open"});

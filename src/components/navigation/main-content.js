@@ -1,7 +1,7 @@
-import {registerComponent} from "@components/components";
+import {BaseComponent, registerComponent} from "@components/components";
 
 @registerComponent()
-export class MainContent extends HTMLElement {
+export class MainContent extends BaseComponent {
   constructor() {
     super();
   }

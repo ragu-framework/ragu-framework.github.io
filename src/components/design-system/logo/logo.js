@@ -1,7 +1,8 @@
 import logo from './logo.png';
+import {BaseComponent, registerComponent} from "@components/components";
 
-
-class Logo extends HTMLElement {
+@registerComponent()
+export class Logo extends BaseComponent {
   connectedCallback() {
     const shadowRoot = this.attachShadow({mode: 'open'});
     shadowRoot.innerHTML = `
@@ -42,5 +43,3 @@ class Logo extends HTMLElement {
     `
   }
 }
-
-customElements.define('logo-component', Logo);

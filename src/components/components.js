@@ -9,22 +9,33 @@ export const elementNameOfComponent = (componentClass) => {
   return classToNameComponentRegistry[componentClass];
 
 }
-export const render = (componentClass, content = '') => {
+export const render = (componentClass, content = '', attributes = {}) => {
   const elementName = elementNameOfComponent(componentClass);
-  return `<${elementName}>${content}</${elementName}>`;
+  let attributesString = "";
+
+  for (const attributeKey of Object.keys(attributes)) {
+    attributesString += ` ${attributeKey}="${attributes[attributeKey]}"`;
+  }
+
+  return `<${elementName}${attributesString}>${content}</${elementName}>`;
 
 }
 
 export class BaseComponent extends HTMLElement {
   connectedCallback() {
     this.attachShadow({mode: "open"});
-    this.shadowRoot.innerHTML = `<style>${this.style.toString()}</style>${this.render()}`
+    this.shadowRoot.innerHTML = `<style>${this.css?.toString()}</style>${this.render()}`
   }
 
   render() {
     return `<slot></slot>`
   }
+
+  static render = function (...args) {
+    return render(this, ...args);
+  }
 }
+
 
 export const registerComponent = () => (componentClass) => {
   customElements.define(elementNameOfComponent(componentClass), componentClass);

@@ -1,4 +1,7 @@
-class HamburgerMenu extends HTMLElement {
+import {BaseComponent, registerComponent} from "@components/components";
+
+@registerComponent()
+export class HamburgerMenu extends BaseComponent {
   constructor() {
     super();
     this.open = false;
@@ -92,4 +95,3 @@ class HamburgerMenu extends HTMLElement {
   }
 }
 
-customElements.define('hamburger-menu', HamburgerMenu);

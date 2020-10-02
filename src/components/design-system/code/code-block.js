@@ -1,6 +1,8 @@
 import {StyleSlot} from "../style-slot";
+import {registerComponent} from "@components/components";
 
-class CodeBlock extends StyleSlot {
+@registerComponent()
+export class CodeBlock extends StyleSlot {
   get styleTemplate() {
     return `
       <style>
@@ -19,5 +21,3 @@ class CodeBlock extends StyleSlot {
     `
   }
 }
-
-customElements.define('code-block', CodeBlock);

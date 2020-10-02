@@ -1,6 +1,8 @@
 import {StyleSlot} from "./style-slot";
+import {registerComponent} from "@components/components";
 
-class MobileStack extends StyleSlot {
+@registerComponent()
+export class MobileStack extends StyleSlot {
   get styleTemplate() {
     return `
       <style>
@@ -15,5 +17,3 @@ class MobileStack extends StyleSlot {
     `;
   }
 }
-
-customElements.define('mobile-stack', MobileStack)

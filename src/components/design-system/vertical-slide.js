@@ -1,6 +1,8 @@
 import {StyleSlot} from "./style-slot";
+import {registerComponent} from "@components/components";
 
-class VerticalSlide extends StyleSlot {
+@registerComponent()
+export class VerticalSlide extends StyleSlot {
   template = `
     <div class="scroller">
       <slot></slot>
@@ -33,5 +35,3 @@ class VerticalSlide extends StyleSlot {
     `;
   }
 }
-
-customElements.define('vertical-slide', VerticalSlide);

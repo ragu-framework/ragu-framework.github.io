@@ -1,7 +1,8 @@
-import {registerComponent} from "@components/components";
+import {BaseComponent, registerComponent} from "@components/components";
+import {HamburgerMenu} from "@components/navigation/main-menu/hamburger-menu";
 
 @registerComponent()
-export class MainMenu extends HTMLElement {
+export class MainMenu extends BaseComponent {
   template = `
     <style>
       :host {
@@ -70,7 +71,7 @@ export class MainMenu extends HTMLElement {
             <slot></slot>
         </nav>
         
-        <hamburger-menu></hamburger-menu>
+        ${HamburgerMenu.render()}
     </header>
   `
 

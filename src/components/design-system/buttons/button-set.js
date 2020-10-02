@@ -1,6 +1,8 @@
 import {StyleSlot} from "../style-slot";
+import {registerComponent} from "@components/components";
 
-class ButtonSet extends StyleSlot {
+@registerComponent()
+export class ButtonSet extends StyleSlot {
   get styleTemplate() {
     return `
       <style>
@@ -16,5 +18,3 @@ class ButtonSet extends StyleSlot {
     `
   }
 }
-
-customElements.define('button-set', ButtonSet);
