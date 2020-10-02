@@ -1,10 +1,18 @@
-export const elementNameOfComponent = (componentClass) => {
-  return 'ragu-' + componentClass.name.toLowerCase();
-}
+const classToNameComponentRegistry = {
+};
 
+export const elementNameOfComponent = (componentClass) => {
+  if (!classToNameComponentRegistry[componentClass]) {
+    classToNameComponentRegistry[componentClass] = `ragu-${componentClass.name.toLowerCase()}-${Date.now()}`;
+  }
+
+  return classToNameComponentRegistry[componentClass];
+
+}
 export const render = (componentClass, content = '') => {
   const elementName = elementNameOfComponent(componentClass);
   return `<${elementName}>${content}</${elementName}>`;
+
 }
 
 export class BaseComponent extends HTMLElement {
