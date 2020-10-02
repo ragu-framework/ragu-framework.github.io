@@ -1,4 +1,4 @@
-import {render} from "@components/render";
+import {render} from "@components/components";
 import {Home} from "@pages/home";
 
 require('@components/design-system/style-slot');
@@ -12,6 +12,9 @@ require("@components/design-system/buttons/primary-button.js");
 require("@components/design-system/buttons/secondary-button.js");
 require("@components/design-system/buttons/button-set.js");
 require("@components/design-system/code/code-block.js");
-require("../style/variables.css");
 
-render(Home, document.body);
+const style = document.createElement('style');
+style.innerHTML = require("../style/variables.css");
+document.head.appendChild(style);
+
+document.body.innerHTML = render(Home);

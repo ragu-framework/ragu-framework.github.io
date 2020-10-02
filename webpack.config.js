@@ -35,11 +35,12 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          'style-loader',
+          'to-string-loader',
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              esModule: false,
+              modules: false,
             }
           }
         ],

@@ -1,3 +1,6 @@
+import {registerComponent} from "@components/components";
+
+@registerComponent()
 export class MainMenu extends HTMLElement {
   template = `
     <style>
@@ -89,5 +92,3 @@ export class MainMenu extends HTMLElement {
     });
   }
 }
-
-customElements.define('main-menu', MainMenu);

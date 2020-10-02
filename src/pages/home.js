@@ -1,12 +1,17 @@
-import {render} from "@components/render";
-import {MainMenu} from "@components/navigation/main-menu/main-menu";
+import {BaseComponent, registerComponent, render} from "@components/components";
 import {MainContent} from "@components/navigation/main-content";
-import mainStyle from "@style/main.css";
+import mainStyle from "@pages/main.css";
+import {Header} from "@components/navigation/header";
 
-export class Home extends HTMLElement {
-  connectedCallback() {
-    render(MainMenu, this, `<a href="">Home</a><a href="">Get Started</a><a href="">Wiki</a>`);
-    render(MainContent, this, `
+
+@registerComponent()
+export class Home extends BaseComponent {
+  style = mainStyle;
+
+  render() {
+    const header = render(Header);
+
+    const main = render(MainContent, `
       <mobile-stack>
         <logo-component>
           <h1 slot="title">Ragu</h1>
@@ -25,7 +30,7 @@ export class Home extends HTMLElement {
         </div>
       </mobile-stack>
   
-      <section class="${mainStyle.infoSection}">
+      <section class="infoSection">
         <h2> 
           Using a Micro-frontend
         </h2>
@@ -35,30 +40,30 @@ export class Home extends HTMLElement {
         <code-block>&lt;ragu-component src=&quot;http://ragu-server.domain.com/components/my-component/&quot;&gt;&lt;/ragu-component&gt;</code-block>
       </section>
   
-      <section class="${mainStyle.infoSection}">
+      <section class="infoSection">
         <h2>
           Why to use?
         </h2>
   
         <vertical-slide>
-          <div class="${mainStyle.infoSection__details}">
+          <div class="infoSection__details">
             <h3>🚀 Server Side Rendering</h3>
             <p>Ragu micro-frontends can be exported rendered at the server side improving the user experience and the load time.</p>
           </div>
   
-          <div class="${mainStyle.infoSection__details}">
+          <div class="infoSection__details">
             <h3>📦 Build System</h3>
             <p>Ragu Server comes with a build system on top of webpack which you can extend though the ragu server configuration.</p>
           </div>
   
-          <div class="${mainStyle.infoSection__details}">
+          <div class="infoSection__details">
             <h3>🤝 Coupleless Integration</h3>
             <p>Share code using private npm package requires project build to apply changes. Ragu enable independent deployment.</p>
           </div>
         </vertical-slide>
       </section>
     `);
+
+    return `${header}${main}`
   }
 }
-
-customElements.define('home-page', Home);

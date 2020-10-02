@@ -1,3 +1,6 @@
+import {registerComponent} from "@components/components";
+
+@registerComponent()
 export class MainContent extends HTMLElement {
   constructor() {
     super();
@@ -18,5 +21,3 @@ export class MainContent extends HTMLElement {
     `;
   }
 }
-
-customElements.define('main-content', MainContent);
