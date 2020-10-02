@@ -1,10 +1,12 @@
+import {HamburgerMenu} from "@components/navigation/main-menu/hamburger-menu";
+
 require('./hamburger-menu');
 
 describe('Hamburger Menu', () => {
   it('calls toggle with true when menu is closed', (done) => {
-    document.body.innerHTML = '<hamburger-menu></hamburger-menu>';
+    document.body.innerHTML = HamburgerMenu.render();
+    const menu = document.body.querySelector(HamburgerMenu.elementName());
 
-    const menu = document.body.querySelector('hamburger-menu');
     menu.addEventListener('hamburger-menu-toggle', (e) => {
       expect(e.detail.open).toBeTruthy();
       done();
@@ -14,9 +16,8 @@ describe('Hamburger Menu', () => {
   });
 
   it('calls toggle with false when menu is open', (done) => {
-    document.body.innerHTML = '<hamburger-menu></hamburger-menu>';
-
-    const menu = document.body.querySelector('hamburger-menu');
+    document.body.innerHTML = HamburgerMenu.render();
+    const menu = document.body.querySelector(HamburgerMenu.elementName());
     menu.click();
 
     menu.addEventListener('hamburger-menu-toggle', (e) => {

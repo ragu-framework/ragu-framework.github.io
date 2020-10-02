@@ -31,8 +31,12 @@ export class BaseComponent extends HTMLElement {
     return `<slot></slot>`
   }
 
-  static render = function (...args) {
+  static render(...args) {
     return render(this, ...args);
+  }
+
+  static elementName() {
+    return elementNameOfComponent(this);
   }
 }
 
