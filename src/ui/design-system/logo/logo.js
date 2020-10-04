@@ -1,5 +1,5 @@
 import logo from './logo.png';
-import {BaseComponent, registerComponent} from "@components/components";
+import {BaseComponent, registerComponent} from "ui/components";
 
 @registerComponent()
 export class Logo extends BaseComponent {

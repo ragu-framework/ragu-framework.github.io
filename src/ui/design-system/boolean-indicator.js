@@ -1,4 +1,4 @@
-import {BaseComponent, registerComponent} from "@components/components";
+import {BaseComponent, registerComponent} from "ui/components";
 
 @registerComponent()
 export class BooleanIndicator extends BaseComponent {

@@ -1,5 +1,5 @@
-import {registerComponent} from "@components/components";
-import {BaseButton} from "@components/design-system/buttons/base-button";
+import {registerComponent} from "ui/components";
+import {BaseButton} from "ui/design-system/buttons/base-button";
 
 @registerComponent()
 export class SecondaryButton extends BaseButton {

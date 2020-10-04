@@ -1,5 +1,5 @@
-import {BaseComponent, registerComponent, render} from "@components/components";
-import {MainMenu} from "@components/navigation/main-menu/main-menu";
+import {BaseComponent, registerComponent, render} from "ui/components";
+import {MainMenu} from "ui/navigation/main-menu/main-menu";
 
 @registerComponent()
 export class Header extends BaseComponent {
