@@ -17,6 +17,7 @@ export class TestRaguDom extends BaseComponent {
           font-family: 'Source Code Pro', monospace;
           color: white;
           overflow: auto;
+          white-space: nowrap;
         }
 
         .centered {
@@ -44,7 +45,7 @@ export class TestRaguDom extends BaseComponent {
           align-items: center;
           width: 100%;
         }
-        
+
         #result ${Title1.elementName()} {
           margin: 20px 0;
           display: block;
@@ -68,6 +69,12 @@ export class TestRaguDom extends BaseComponent {
           border: 1px solid rgba(43, 51, 50, 0.13);
           padding: 16px 20px;
           border-radius: 10px;
+        }
+
+        @media screen and (min-width: 940px) {
+          #result ${Title1.elementName()} {
+            padding: 0
+          }
         }
       </style>
 

@@ -11,6 +11,7 @@ export class MainMenu extends BaseComponent {
         top: 0;
         left: 0;
         background: white;
+        z-index: 1;
       }
 
       header {
