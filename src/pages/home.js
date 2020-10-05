@@ -88,7 +88,10 @@ export class Home extends StyleSlot {
 
       <section class="infoSection ragu-compatibility">
         ${Title1.render(`You don’t need to rewrite your entire front-end. Ragu is compatible with:`)}
-        ${Text.render(`<p>As you can just plug ragu to your current codebase it is useful to manage legacy strangulation.</p>`)}
+        ${Text.render(`<p>
+          Ragu helps you to give more autonomy to your teams and also it is helpful to legacy replacement as it
+          requires only few configuration to expose you front-end as micro-frontends.
+        </p>`)}
 
         ${VerticalSlide.render(`
           ${FrameworkSupport.render(`
