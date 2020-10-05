@@ -31,7 +31,7 @@ export class Home extends StyleSlot {
       text-decoration: inherit;
     }
 
-    .articles {
+    .footer {
       margin-top: 20px;
     }
 
