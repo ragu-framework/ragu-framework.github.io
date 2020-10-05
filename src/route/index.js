@@ -2,4 +2,4 @@ import {Home} from "@pages/home";
 
 require("../style/variables.css")
 
-document.body.innerHTML = Home.render();
+document.body.appendChild(new Home());

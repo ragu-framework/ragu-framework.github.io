@@ -17,6 +17,7 @@ import reactLogo from '../languages-and-frameworks/react.png';
 import vueLogo from '../languages-and-frameworks/vue.png';
 import angularLogo from '../languages-and-frameworks/angular.png';
 import {BooleanIndicator} from "@ui/design-system/boolean-indicator";
+import {TestRaguDom} from "@ui/components/test-ragu-dom";
 
 
 @registerComponent()
@@ -108,6 +109,8 @@ export class Home extends StyleSlot {
           })}
         `)}
       </section>
+      
+      ${TestRaguDom.render()}
     `))}`
   }
 }
