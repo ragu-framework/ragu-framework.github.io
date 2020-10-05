@@ -30,7 +30,6 @@ export class Home extends StyleSlot {
     }
     .ragu-compatibility a {
       color: inherit;
-      text-decoration: inherit;
     }
 
     .footer {
@@ -107,29 +106,27 @@ export class Home extends StyleSlot {
 
         ${VerticalSlide.render(`
           ${FrameworkSupport.render(`
-            <a href="https://github.com/ragu-framework/ragu/issues/2" target="_blank">${BooleanIndicator.render(`Ragu Client`, {checked: true})}</a>
-            <a href="https://github.com/ragu-framework/ragu/issues/1" target="_blank">${BooleanIndicator.render(`Ragu Server Adapter`, {checked: true})}</a>
+            ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/2" target="_blank">Ragu Client</a>`, {checked: true})}
+            ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/1" target="_blank">Ragu Server Adapter</a>`, {checked: true})}
           `, {
             'framework-name': 'React',
             'framework-logo': reactLogo,
           })}
           ${FrameworkSupport.render(`
-            <a href="https://github.com/ragu-framework/ragu/issues/3" target="_blank">${BooleanIndicator.render(`Ragu Client`, {checked: true})}</a>
+            ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/3" target="_blank">Ragu Client</a>`, {checked: true})}</a>
 
-            <a href="https://medium.com/@carlosmaniero/transforming-your-vue-js-project-into-micro-frontends-with-server-side-rendering-9cdaab16f5e9"  target="_blank">
-              ${BooleanIndicator.render(`Ragu Server Adapter`, {checked: true})}
-            </a>
+              ${BooleanIndicator.render(`
+                <a href="https://medium.com/@carlosmaniero/transforming-your-vue-js-project-into-micro-frontends-with-server-side-rendering-9cdaab16f5e9"  target="_blank">
+                  Ragu Server Adapter
+                </a>
+              `, {checked: true})}
           `, {
             'framework-name': 'Vue',
             'framework-logo': vueLogo,
           })}
           ${FrameworkSupport.render(`
-            <a href="https://github.com/ragu-framework/ragu/issues/4" target="_blank">
-              ${BooleanIndicator.render(`Ragu Client`, {checked: true})}
-            </a>
-            <a href="https://github.com/ragu-framework/ragu/issues/5" target="_blank">
-              ${BooleanIndicator.render(`Ragu Server Adapter`, {checked: false})}
-            </a>
+              ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/4" target="_blank">Ragu Client</a>`, {checked: true})}
+              ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/5" target="_blank">Ragu Server Adapter</a>`, {checked: false})}
           `, {
             'framework-name': 'Angular 2+',
             'framework-logo': angularLogo,
