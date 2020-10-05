@@ -2,6 +2,7 @@ import {BaseComponent, registerComponent} from "@ui/components";
 import {Title1} from "@ui/design-system/typography/title-1";
 import {Text} from "@ui/design-system/typography/text";
 import {PrimaryButton} from "@ui/design-system/buttons/primary-button";
+import {MainContent} from "@ui/navigation/main-content";
 
 @registerComponent()
 export class TestRaguDom extends BaseComponent {
@@ -17,9 +18,15 @@ export class TestRaguDom extends BaseComponent {
           color: white;
         }
 
+        .centered {
+          width: 920px;
+          margin: 0 auto;
+        }
+
         a {
           color: #BF265E;
         }
+
         json-viewer {
           --font-family: 'Source Code Pro', monospace;
           --preview-background: transparent;
@@ -42,6 +49,15 @@ export class TestRaguDom extends BaseComponent {
           display: block;
         }
 
+        #output {
+          text-align: center;
+        }
+        #output > div {
+          min-width: 920px;
+          display: inline-block;
+          text-align: initial;
+        }
+
         input {
           flex-grow: 1;
           margin-right: 20px;
@@ -51,45 +67,54 @@ export class TestRaguDom extends BaseComponent {
         }
       </style>
 
-      ${Title1.render(`Check it out!`)}
+      ${MainContent.render(`
+        ${Title1.render(`Check it out!`)}
 
-      ${Text.render(`
-        <p>
-          There is a demo using React and VueJS at the same app live at:
-          <a href="https://ragu-ecommerce.herokuapp.com/" target="_blank">https://ragu-ecommerce.herokuapp.com/.</a>
-        </p>
-        <p>
-          You can play with some micro-frontends from ragu-ecommerce to have a better understanding of how it works and
-          how easy it is to use a micro-frontend.
-        </p>
-      `)}
-
-      <form>
-        <input type="text" value="${this.microFrontend}">
-        ${PrimaryButton.render(`<button>Go!</button>`)}
-      </form>
-
-      ${Text.render(`
-        <div>
+        ${Text.render(`
           <p>
-            <strong>Other examples: </strong>
-
-            <ul id="other-examples">
-              <li><a href="https://ragu-catalog-react.herokuapp.com/components/pokemon-details?name=pikachu" rel="nofollow">Pikachu</a></li>
-              <li><a href="https://ragu-catalog-react.herokuapp.com/components/featured-products" rel="nofollow">Pokemon Catalog</a></li>
-            </ul>
+            There is a demo using React and VueJS at the same app live at:
+            <a href="https://ragu-ecommerce.herokuapp.com/" target="_blank">https://ragu-ecommerce.herokuapp.com/.</a>
           </p>
+          <p>
+            You can play with some micro-frontends from ragu-ecommerce to have a better understanding of how it works and
+            how easy it is to use a micro-frontend.
+          </p>
+        `)}
 
-        </div>
+        <form>
+          <input type="text" value="${this.microFrontend}">
+          ${PrimaryButton.render(`<button>Go!</button>`)}
+        </form>
+
+        ${Text.render(`
+          <div>
+            <p>
+              <strong>Other examples: </strong>
+
+              <ul id="other-examples">
+                <li><a href="https://ragu-catalog-react.herokuapp.com/components/pokemon-details?name=pikachu" rel="nofollow">Pikachu</a></li>
+                <li><a href="https://ragu-catalog-react.herokuapp.com/components/featured-products" rel="nofollow">Pokemon Catalog</a></li>
+              </ul>
+            </p>
+          </div>
+        `)}
       `)}
 
       <div id="result">
-        ${Title1.render(`Result`)}
+        <div class="centered">
+          ${Title1.render(`Response`)}
+          <div id="json-wrapper"></div>
+        </div>
 
-        <ragu-component src="${this.microFrontend}"></ragu-component>
+        <div class="centered">
+          ${Title1.render(`Result`)}
+        </div>
 
-        ${Title1.render(`Response`)}
-        <div id="json-wrapper"></div>
+        <div id="output">
+          <div>
+            <ragu-component src="${this.microFrontend}"></ragu-component>
+          </div>
+        </div>
       </div>
     `
   }

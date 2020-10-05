@@ -109,8 +109,9 @@ export class Home extends StyleSlot {
           })}
         `)}
       </section>
-      
-      ${TestRaguDom.render()}
-    `))}`
+    `))}
+
+    ${TestRaguDom.render()}
+    `
   }
 }
