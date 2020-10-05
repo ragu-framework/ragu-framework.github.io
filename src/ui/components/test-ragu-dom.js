@@ -20,7 +20,7 @@ export class TestRaguDom extends BaseComponent {
         }
 
         .centered {
-          width: 920px;
+          max-width: 920px;
           margin: 0 auto;
         }
 
@@ -44,17 +44,20 @@ export class TestRaguDom extends BaseComponent {
           align-items: center;
           width: 100%;
         }
-
+        
         #result ${Title1.elementName()} {
           margin: 20px 0;
           display: block;
+          padding: 0 20px;
         }
 
         #output {
           text-align: center;
+          overflow: auto;
+          padding: 0 20px;
         }
         #output > div {
-          min-width: 920px;
+          min-width: min(920px, 100%);
           display: inline-block;
           text-align: initial;
         }
@@ -69,7 +72,7 @@ export class TestRaguDom extends BaseComponent {
       </style>
 
       ${MainContent.render(`
-        ${Title1.render(`Check it out!`)}
+        ${Title1.render(`Playground`)}
 
         ${Text.render(`
           <p>
