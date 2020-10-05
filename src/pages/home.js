@@ -78,7 +78,7 @@ export class Home extends StyleSlot {
         ${VerticalSlide.render(`
           ${InfoSection.render(`
             <h2 slot="title">🚀 Server Side Rendering</h2>
-            <p slot="content">Ragu micro-frontends can be exported rendered at the server side improving the user experience and the load time.</p>
+            <p slot="content">Ragu micro-frontends can be rendered at the server side improving the user experience and the load time.</p>
           `)}
 
           ${InfoSection.render(`
