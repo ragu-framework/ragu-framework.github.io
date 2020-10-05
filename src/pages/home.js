@@ -155,7 +155,7 @@ export class Home extends StyleSlot {
         </ul>
 
         <footer>
-          ❤️ With love by <a href="https://github.com/carlosmaniero" target="_blank">Maniero</a>
+          ❤️ with love by <a href="https://github.com/carlosmaniero" target="_blank">Maniero</a>
         </footer>
       `)}
     `, {
