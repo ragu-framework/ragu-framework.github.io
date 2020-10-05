@@ -66,6 +66,10 @@ export class TestRaguDom extends BaseComponent {
           text-align: initial;
         }
 
+        ${TestRaguDom.elementName()} #json-wrapper strong {
+          font-family: 'Poppins', sans-serif;
+        }
+
         ${TestRaguDom.elementName()} #other-examples {
           background: rgba(43, 51, 50, 0.06);
           padding: 6px 40px 20px;
@@ -207,7 +211,11 @@ export class TestRaguDom extends BaseComponent {
 
     this.element.querySelector('#result').style.opacity = '1';
     this.element.querySelector('#json-wrapper').innerHTML = `
-      <p><strong>GET:</strong> ${this.microFrontend}</p>
+      <p><strong>Micro-frontend Usage:</strong></p>
+      <p>&lt;ragu-component src="${this.microFrontend}"&gt;&lt;/ragu-component&gt;</p>
+
+      <p><strong>GET:</strong></p>
+      <p>${this.microFrontend}</p>
 
       <json-viewer value='${JSON.stringify(response)}'></json-viewer>
     `
