@@ -16,6 +16,7 @@ export class TestRaguDom extends BaseComponent {
           padding: 20px;
           font-family: 'Source Code Pro', monospace;
           color: white;
+          overflow: auto;
         }
 
         .centered {
@@ -145,7 +146,7 @@ export class TestRaguDom extends BaseComponent {
   onMicroFrontendHydrated(e) {
     this.shadowRoot.getElementById('result').style.opacity = '1';
     this.shadowRoot.getElementById('json-wrapper').innerHTML = `
-      GET: ${this.microFrontend}
+      <p><strong>GET:</strong> ${this.microFrontend}</p>
 
       <json-viewer value='${JSON.stringify(e.detail)}'></json-viewer>
     `
