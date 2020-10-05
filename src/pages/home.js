@@ -69,7 +69,10 @@ export class Home extends StyleSlot {
       <section class="infoSection">
         ${Title1.render(`Using a micro-frontend`)}
 
-        ${Text.render(`<p>To use a micro-frontend exposed by Ragu Server is easy as it. Ragu handles all dependency fetching.</p>`)}
+        ${Text.render(`
+          <p>
+          To use a micro-frontend exposed by Ragu Server is easy as it. All you need to do is do give a
+          micro-frontend URL to ragu-component and it will handle all dependency fetching.</p>`)}
 
         ${CodeBlock.render("&lt;ragu-component src=&quot;http://ragu-server.domain.com/components/my-component/&quot;&gt;&lt;/ragu-component&gt;")}
       </section>
