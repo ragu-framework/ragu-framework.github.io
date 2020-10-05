@@ -35,8 +35,15 @@ export class Home extends StyleSlot {
       margin-top: 20px;
     }
 
-    .articles a {
+    .footer a {
       color: #BF265E;
+    }
+
+    .footer footer {
+      padding: 20px 0 0;
+      text-align: center;
+      border-top: 1px solid rgba(43, 51, 50, 0.13);
+      margin-top: 20px;
     }
   </style>
 `;
@@ -140,9 +147,13 @@ export class Home extends StyleSlot {
             </a>
           </li>
         </ul>
+
+        <footer>
+          ❤️ With love by <a href="https://github.com/carlosmaniero" target="_blank">Maniero</a>
+        </footer>
       `)}
     `, {
-      class: 'articles'
+      class: 'footer'
     })}
     `
   }
