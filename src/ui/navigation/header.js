@@ -5,7 +5,7 @@ import {MainMenu} from "ui/navigation/main-menu/main-menu";
 export class Header extends BaseComponent {
   render() {
     return MainMenu.render(`
-      <a href="https://github.com/ragu-framework/ragu/wiki/Getting-started:-Configuring-your-Ragu-Server" target="_blank">Get Started</a>
+      <a href="https://github.com/ragu-framework/ragu#installation" target="_blank">Get Started</a>
       <a href="https://github.com/ragu-framework/ragu/wiki" target="_blank">Wiki</a>
     `);
   }

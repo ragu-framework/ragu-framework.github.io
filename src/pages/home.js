@@ -49,7 +49,7 @@ export class Home extends StyleSlot {
         <div>
           ${ButtonSet.render(
       `
-              ${PrimaryButton.render(`<a href="https://github.com/ragu-framework/ragu/wiki/Getting-started:-Configuring-your-Ragu-Server" target="_blank">Get started</a>`)}
+              ${PrimaryButton.render(`<a href="https://github.com/ragu-framework/ragu#installation" target="_blank">Get started</a>`)}
               ${SecondaryButton.render(`<a href="https://github.com/ragu-framework/ragu">Github</a>`)}
             `,
       {'max-width': '420px'}
