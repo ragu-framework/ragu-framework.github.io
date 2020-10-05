@@ -15,6 +15,7 @@ export class TestRaguDom extends BaseComponent {
       <style>
         ${TestRaguDom.elementName()} #json-wrapper {
           background: #2B3332;
+          border-radius: 10px;
           padding: 20px;
           font-family: 'Source Code Pro', monospace;
           color: white;
@@ -105,7 +106,7 @@ export class TestRaguDom extends BaseComponent {
           </p>
           <p>
             You can play with some micro-frontends from ragu-ecommerce to have a better understanding of how it works and
-            how easy it is to use a micro-frontend.
+            how easy it is to use a Ragu micro-frontend.
           </p>
         `)}
 

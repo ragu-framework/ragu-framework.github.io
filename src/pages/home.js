@@ -71,7 +71,7 @@ export class Home extends StyleSlot {
         ${Text.render(`
           <p>
           To use a micro-frontend exposed by Ragu Server is easy as it. All you need to do is do give a
-          micro-frontend URL to ragu-component and it will handle all dependency fetching.</p>`)}
+          micro-frontend URL to ragu-component and it will handle everything.</p>`)}
 
         ${CodeBlock.render("&lt;ragu-component src=&quot;http://ragu-server.domain.com/components/my-component/&quot;&gt;&lt;/ragu-component&gt;")}
       </section>
@@ -82,17 +82,30 @@ export class Home extends StyleSlot {
         ${VerticalSlide.render(`
           ${InfoSection.render(`
             <h2 slot="title">🚀 Server Side Rendering</h2>
-            <p slot="content">Ragu micro-frontends can be rendered at the server side improving the user experience and the load time.</p>
+            <div slot="content">
+              <p>Ragu micro-frontends can be rendered at the server side improving the user experience and the load time.</p>
+              <p>Every micro-frontend has its own endpoint witch can be used to pre-fetch micro-frontends. Check it out the playground section.</p>
+            </div>
           `)}
 
           ${InfoSection.render(`
             <h2 slot="title">📦 Build System</h3></h2>
-            <p slot="content">Ragu Server comes with a build system on top of webpack which you can extend though the ragu server configuration.</p>
+            <div slot="content">
+              <p>Ragu Server comes with a build system on top of webpack which you can extend though the ragu server configuration.</p>
+              <p>There are adapters listed bellow witch makes the integration with your favorite framework more straightforward.</p>
+            </div>
           `)}
 
           ${InfoSection.render(`
             <h2 slot="title">🤝 Coupleless Integration</h3></h2>
-            <p slot="content">Share code using private npm package requires project build to apply changes. Ragu enable independent deployment.</p>
+            <div slot="content">
+              <p>
+                To share code across projects using a npm package is hard to manage and requires a full project build to apply changes.
+              </p>
+              <p>
+                Ragu enables independent deployment extending the concept of micro-services to the front-end.
+              </p>
+            </div>
           `)}
         `)}
       </section>

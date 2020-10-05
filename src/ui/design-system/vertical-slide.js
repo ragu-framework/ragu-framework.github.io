@@ -16,7 +16,7 @@ export class VerticalSlide extends StyleSlot {
           width: calc(100% + 40px);
           box-sizing: border-box;
           margin-left: -20px;
-          display: block;
+          display: flex;
         }
         .scroller {
           display: flex;
@@ -24,7 +24,7 @@ export class VerticalSlide extends StyleSlot {
         }
         .scroller ::slotted(*) {
           min-width: 240px;
-          flex-basis: auto;
+          flex-basis: 0;
           flex-grow: 1;
           margin-left: 40px;
         }

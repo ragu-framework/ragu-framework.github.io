@@ -15,6 +15,7 @@ export class CodeBlock extends StyleSlot {
           display: block;
           box-sizing: border-box;
           max-width: 100%;
+          border-radius: 10px;
           white-space: nowrap;
         }
       </style>
