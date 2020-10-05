@@ -76,6 +76,10 @@ export class TestRaguDom extends BaseComponent {
           display: block;
         }
 
+        ${TestRaguDom.elementName()} .error {
+          color: #ba4a3c;
+        }
+
         ${TestRaguDom.elementName()} form input {
           flex-grow: 1;
           margin-right: 20px;
@@ -161,6 +165,11 @@ export class TestRaguDom extends BaseComponent {
     this.element.querySelector('#result').style.opacity = '0.3';
 
     this.element.querySelector('ragu-component')
+      .addEventListener('ragu:fetch-fail', (e) => {
+        this.onMicroFrontendError()
+      });
+
+    this.element.querySelector('ragu-component')
       .addEventListener('ragu:hydrated', (e) => this.onMicroFrontendHydrated(e));
 
     this.element.querySelectorAll("#other-examples a").forEach((link) => {
@@ -179,11 +188,27 @@ export class TestRaguDom extends BaseComponent {
   }
 
   onMicroFrontendHydrated(e) {
+    const allowedKeys = [
+      'client',
+      'dependencies',
+      'html',
+      'props',
+      'resolverFunction',
+      'state',
+      'styles'
+    ]
+
+    const response = {};
+
+    allowedKeys.forEach(key => {
+      response[key] = e.detail[key];
+    });
+
     this.element.querySelector('#result').style.opacity = '1';
     this.element.querySelector('#json-wrapper').innerHTML = `
       <p><strong>GET:</strong> ${this.microFrontend}</p>
 
-      <json-viewer value='${JSON.stringify(e.detail)}'></json-viewer>
+      <json-viewer value='${JSON.stringify(response)}'></json-viewer>
     `
   }
 
@@ -191,5 +216,17 @@ export class TestRaguDom extends BaseComponent {
     this.element.querySelector('#result').style.opacity = '0.3';
     this.element.querySelector('input').value = this.microFrontend;
     this.element.querySelector('ragu-component').setAttribute('src', this.microFrontend);
+  }
+
+  onMicroFrontendError() {
+    this.element.querySelector('#result').style.opacity = '1';
+    this.element.querySelector('ragu-component').innerHTML = "Error!";
+    this.element.querySelector('#json-wrapper').innerHTML = `
+      <div class="error">
+        <p><strong>GET:</strong> ${this.microFrontend}</p>
+
+        Fail to load!
+      </div>
+    `
   }
 }
