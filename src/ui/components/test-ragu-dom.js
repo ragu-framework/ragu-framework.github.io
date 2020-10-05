@@ -6,12 +6,14 @@ import {MainContent} from "@ui/navigation/main-content";
 
 @registerComponent()
 export class TestRaguDom extends BaseComponent {
+  shadowDOM = false;
+
   microFrontend = "https://ragu-catalog-react.herokuapp.com/components/pokemon-details?name=bulbasaur";
 
   render() {
     return `
       <style>
-        #json-wrapper {
+        ${TestRaguDom.elementName()} #json-wrapper {
           background: #2B3332;
           padding: 20px;
           font-family: 'Source Code Pro', monospace;
@@ -20,16 +22,16 @@ export class TestRaguDom extends BaseComponent {
           white-space: nowrap;
         }
 
-        .centered {
+        ${TestRaguDom.elementName()} .centered {
           max-width: 920px;
           margin: 0 auto;
         }
 
-        a {
+        ${TestRaguDom.elementName()} a {
           color: #BF265E;
         }
 
-        json-viewer {
+        ${TestRaguDom.elementName()} json-viewer {
           --font-family: 'Source Code Pro', monospace;
           --preview-background: transparent;
           --key-color: #d9751e;
@@ -40,30 +42,41 @@ export class TestRaguDom extends BaseComponent {
           --toggle-color: #bbb;
         }
 
-        form {
+        ${TestRaguDom.elementName()} form {
           display: flex;
           align-items: center;
           width: 100%;
         }
 
-        #result ${Title1.elementName()} {
+        ${TestRaguDom.elementName()} #result ${Title1.elementName()} {
           margin: 20px 0;
           display: block;
           padding: 0 20px;
         }
 
-        #output {
+        ${TestRaguDom.elementName()} #output {
           text-align: center;
           overflow: auto;
           padding: 0 20px;
         }
-        #output > div {
+        ${TestRaguDom.elementName()} #output > div {
           min-width: min(920px, 100%);
           display: inline-block;
           text-align: initial;
         }
 
-        input {
+        ${TestRaguDom.elementName()} #other-examples {
+          background: rgba(43, 51, 50, 0.06);
+          padding: 6px 40px 20px;
+          border-radius: 10px;
+        }
+
+        ${TestRaguDom.elementName()} #other-examples strong {
+          margin-top: 14px;
+          display: block;
+        }
+
+        ${TestRaguDom.elementName()} form input {
           flex-grow: 1;
           margin-right: 20px;
           border: 1px solid rgba(43, 51, 50, 0.13);
@@ -72,7 +85,7 @@ export class TestRaguDom extends BaseComponent {
         }
 
         @media screen and (min-width: 940px) {
-          #result ${Title1.elementName()} {
+          ${TestRaguDom.elementName()} #result ${Title1.elementName()} {
             padding: 0
           }
         }
@@ -83,7 +96,7 @@ export class TestRaguDom extends BaseComponent {
 
         ${Text.render(`
           <p>
-            There is a demo using React and VueJS at the same app live at:
+            There is a demo using React and Vue.js at the same app live at:
             <a href="https://ragu-ecommerce.herokuapp.com/" target="_blank">https://ragu-ecommerce.herokuapp.com/.</a>
           </p>
           <p>
@@ -103,8 +116,20 @@ export class TestRaguDom extends BaseComponent {
               <strong>Other examples: </strong>
 
               <ul id="other-examples">
-                <li><a href="https://ragu-catalog-react.herokuapp.com/components/pokemon-details?name=pikachu" rel="nofollow">Pikachu</a></li>
-                <li><a href="https://ragu-catalog-react.herokuapp.com/components/featured-products" rel="nofollow">Pokemon Catalog</a></li>
+                <li>
+                  <strong>React Catalog</strong>
+                  <ul>
+                    <li><a href="https://ragu-catalog-react.herokuapp.com/components/pokemon-details?name=pikachu" rel="nofollow">Pikachu</a></li>
+                    <li><a href="https://ragu-catalog-react.herokuapp.com/components/featured-products" rel="nofollow">Pokemon Catalog</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Vue.js Cart</strong>
+                  <ul>
+                    <li><a href="https://ragu-cart-vuejs.herokuapp.com/components/cart" rel="nofollow">Cart Count</a></li>
+                    <li><a href="https://ragu-cart-vuejs.herokuapp.com/components/cart-list" rel="nofollow">Cart List</a></li>
+                  </ul>
+                </li>
               </ul>
             </p>
           </div>
@@ -133,12 +158,12 @@ export class TestRaguDom extends BaseComponent {
   connectedCallback() {
     super.connectedCallback();
 
-    this.shadowRoot.getElementById('result').style.opacity = '0.3';
+    this.element.querySelector('#result').style.opacity = '0.3';
 
-    this.shadowRoot.querySelector('ragu-component')
+    this.element.querySelector('ragu-component')
       .addEventListener('ragu:hydrated', (e) => this.onMicroFrontendHydrated(e));
 
-    this.shadowRoot.querySelectorAll("#other-examples a").forEach((link) => {
+    this.element.querySelectorAll("#other-examples a").forEach((link) => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
         this.microFrontend = e.target.href;
@@ -146,16 +171,16 @@ export class TestRaguDom extends BaseComponent {
       });
     })
 
-    this.shadowRoot.querySelector('form').addEventListener('submit', (e) => {
+    this.element.querySelector('form').addEventListener('submit', (e) => {
       e.preventDefault();
-      this.microFrontend = this.shadowRoot.querySelector('input').value;
+      this.microFrontend = this.element.querySelector('input').value;
       this.updateMicroFrontends();
     });
   }
 
   onMicroFrontendHydrated(e) {
-    this.shadowRoot.getElementById('result').style.opacity = '1';
-    this.shadowRoot.getElementById('json-wrapper').innerHTML = `
+    this.element.querySelector('#result').style.opacity = '1';
+    this.element.querySelector('#json-wrapper').innerHTML = `
       <p><strong>GET:</strong> ${this.microFrontend}</p>
 
       <json-viewer value='${JSON.stringify(e.detail)}'></json-viewer>
@@ -163,8 +188,8 @@ export class TestRaguDom extends BaseComponent {
   }
 
   updateMicroFrontends() {
-    this.shadowRoot.getElementById('result').style.opacity = '0.3';
-    this.shadowRoot.querySelector('input').value = this.microFrontend;
-    this.shadowRoot.querySelector('ragu-component').setAttribute('src', this.microFrontend);
+    this.element.querySelector('#result').style.opacity = '0.3';
+    this.element.querySelector('input').value = this.microFrontend;
+    this.element.querySelector('ragu-component').setAttribute('src', this.microFrontend);
   }
 }

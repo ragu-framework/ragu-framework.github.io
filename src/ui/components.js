@@ -26,13 +26,19 @@ export const render = (componentClass, content = '', attributes = {}) => {
 }
 
 export class BaseComponent extends HTMLElement {
+  shadowDOM = true;
+
   connectedCallback() {
-    this.attachShadow({mode: "open"});
-    this.shadowRoot.innerHTML = `${this.render()}`
+    this.shadowDOM && this.attachShadow({mode: "open"});
+    this.element.innerHTML = `${this.render()}`
   }
 
   render() {
     return `<slot></slot>`
+  }
+
+  get element() {
+    return this.shadowDOM ? this.shadowRoot : this;
   }
 
   static render(...args) {

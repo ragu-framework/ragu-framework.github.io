@@ -22,6 +22,8 @@ import {TestRaguDom} from "@ui/components/test-ragu-dom";
 
 @registerComponent()
 export class Home extends StyleSlot {
+  shadowDOM = false;
+
   styleTemplate = `<style>
     .infoSection {
       margin: 60px 0;
