@@ -47,6 +47,17 @@ export class MainMenu extends BaseComponent {
       nav.open {
         right: 0;
       }
+
+      .right-nav {
+        display: flex;
+        align-items: center;
+      }
+
+      slot[name="right-nav"] {
+        margin-right: 10px;
+        display: block;
+      }
+
       ::slotted(a) {
         display: block;
         font-family: var(--link-font-family), sans-serif;
@@ -69,10 +80,13 @@ export class MainMenu extends BaseComponent {
         </h1>
         
         <nav>
-            <slot></slot>
+            <slot name="link"></slot>
         </nav>
         
-        ${HamburgerMenu.render()}
+        <div class="right-nav">
+          <slot name="right-nav"></slot>
+          ${HamburgerMenu.render()}
+        </div>
     </header>
   `
 

@@ -50,18 +50,19 @@ export class Home extends StyleSlot {
 `;
 
   get template() {
-    return `${(Header.render())}${(MainContent.render(`
+    return `
+    ${(Header.render(`<div slot="right-nav"><a class="github-button" href="https://github.com/ragu-framework/ragu" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ragu-framework/ragu on GitHub">Star</a></div>`))}
+        
+    ${(MainContent.render(`
+
       ${MobileStack.render(`
         ${Logo.render(`<h1 slot="title">Ragu</h1><h2 slot="sub-title">Slice your front-end</h2>`)}
 
         <div>
-          ${ButtonSet.render(
-      `
-              ${PrimaryButton.render(`<a href="https://github.com/ragu-framework/ragu#installation" target="_blank">Get started</a>`)}
-              ${SecondaryButton.render(`<a href="https://github.com/ragu-framework/ragu">Github</a>`)}
-            `,
-      {'max-width': '420px'}
-    )}
+          ${ButtonSet.render(`
+            ${PrimaryButton.render(`<a href="https://github.com/ragu-framework/ragu#installation" target="_blank">Get started</a>`)}
+            ${SecondaryButton.render(`<a href="https://github.com/ragu-framework/ragu">Github</a>`)}
+          `, {'max-width': '420px'})}
         </div>
       `)}
 
