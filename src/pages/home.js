@@ -119,8 +119,12 @@ export class Home extends StyleSlot {
             'framework-logo': vueLogo,
           })}
           ${FrameworkSupport.render(`
-            ${BooleanIndicator.render(`Ragu Client`, {checked: true})}
-            ${BooleanIndicator.render(`Ragu Server Adapter`, {checked: false})}
+            <a href="https://github.com/ragu-framework/ragu/issues/4" target="_blank">
+              ${BooleanIndicator.render(`Ragu Client`, {checked: true})}
+            </a>
+            <a href="https://github.com/ragu-framework/ragu/issues/5" target="_blank">
+              ${BooleanIndicator.render(`Ragu Server Adapter`, {checked: false})}
+            </a>
           `, {
             'framework-name': 'Angular 2+',
             'framework-logo': angularLogo,
