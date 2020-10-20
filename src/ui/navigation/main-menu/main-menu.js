@@ -29,6 +29,11 @@ export class MainMenu extends BaseComponent {
         font-size: 0.8rem;
       }
       
+      h1 a {
+        color: inherit;
+        text-decoration: none;
+      }
+      
       nav {
         position: fixed;
         top: 66px;
@@ -76,7 +81,7 @@ export class MainMenu extends BaseComponent {
     </style>
     <header>
         <h1>
-            Ragu Framework
+            <a href="#!">Ragu Framework</a>
         </h1>
         
         <nav>

@@ -3,13 +3,10 @@ import {MainContent} from "@ui/navigation/main-content";
 import {Header} from "@ui/navigation/header";
 import {StyleSlot} from "@ui/design-system/style-slot";
 import {Text} from "@ui/design-system/typography/text";
-import {MfLoader} from "@ui/components/mf-loader";
 
 
 @registerComponent()
-export class RaguReactServerAdapter extends StyleSlot {
-  shadowDOM = false;
-
+export class Page extends StyleSlot {
   styleTemplate = `<style>
     .infoSection {
       margin: 60px 0;
@@ -35,13 +32,21 @@ export class RaguReactServerAdapter extends StyleSlot {
   </style>
 `;
 
+  setContent(component) {
+    this.childNodes.forEach((el) => {
+      if (el.slot !== 'gh-button') {
+        el.remove();
+      }
+    });
+
+    this.appendChild(component);
+  }
+
   get template() {
     return `
-    ${(Header.render(`<div slot="right-nav"><a class="github-button" href="https://github.com/ragu-framework/ragu" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ragu-framework/ragu on GitHub">Star</a></div>`))}
+    ${(Header.render(`<div slot="right-nav"><slot name="gh-button"></slot></div>`))}
         
-    ${MainContent.render(`
-      ${MfLoader.render('', {src: 'https://ragu-react-server-adapter.herokuapp.com/components/installation'})}
-    `)}
+    <slot></slot>
 
     ${MainContent.render(`
       ${Text.render(`

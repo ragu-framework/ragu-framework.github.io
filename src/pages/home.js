@@ -51,8 +51,6 @@ export class Home extends StyleSlot {
 
   get template() {
     return `
-    ${(Header.render(`<div slot="right-nav"><a class="github-button" href="https://github.com/ragu-framework/ragu" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ragu-framework/ragu on GitHub">Star</a></div>`))}
-        
     ${(MainContent.render(`
 
       ${MobileStack.render(`
@@ -167,10 +165,6 @@ export class Home extends StyleSlot {
             </a>
           </li>
         </ul>
-
-        <footer>
-          ❤️ with love by <a href="https://github.com/carlosmaniero" target="_blank">Maniero</a>
-        </footer>
       `)}
     `, {
       class: 'footer'
