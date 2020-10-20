@@ -1,4 +1,4 @@
-import {BaseComponent, registerComponent, render} from "@ui/components";
+import {BaseComponent, registerComponent, render} from "@ui/base-component";
 import {MainMenu} from "@ui/navigation/main-menu/main-menu";
 
 @registerComponent()

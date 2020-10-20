@@ -1,4 +1,4 @@
-import {createStyledComponent} from "@ui/components";
+import {createStyledComponent} from "@ui/base-component";
 
 const styled = createStyledComponent(
   `<slot name="image"></slot><slot name="description"></slot>`

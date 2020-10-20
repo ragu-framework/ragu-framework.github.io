@@ -1,4 +1,4 @@
-import {BaseComponent, registerComponent} from "@ui/components";
+import {BaseComponent, registerComponent} from "@ui/base-component";
 import {ImageDescription} from "@ui/design-system/image-description";
 import {InfoSection} from "@ui/design-system/sections/info-section";
 

@@ -1,4 +1,4 @@
-import {PrimaryFont} from "ui/design-system/typography/primary-font";
+import {PrimaryFont} from "@ui/design-system/typography/primary-font";
 
 const styled = PrimaryFont.createStyledElement('<h1><slot></slot></h1>');
 

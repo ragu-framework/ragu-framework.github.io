@@ -1,4 +1,4 @@
-import {BooleanIndicator} from "ui/design-system/boolean-indicator";
+import {BooleanIndicator} from "@ui/design-system/boolean-indicator";
 
 describe('Boolean indicator', () => {
   it('renders the true emoji when checked', async () => {

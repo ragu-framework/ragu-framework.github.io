@@ -1,4 +1,4 @@
-import {BaseComponent, registerComponent} from "@ui/components";
+import {BaseComponent, registerComponent} from "@ui/base-component";
 import {Title1} from "@ui/design-system/typography/title-1";
 import {Text} from "@ui/design-system/typography/text";
 import {PrimaryButton} from "@ui/design-system/buttons/primary-button";

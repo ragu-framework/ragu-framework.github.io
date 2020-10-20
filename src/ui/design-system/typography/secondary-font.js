@@ -1,4 +1,4 @@
-import {styled} from "ui/components";
+import {styled} from "@ui/base-component";
 
 export const SecondaryFont = styled`
   :host {

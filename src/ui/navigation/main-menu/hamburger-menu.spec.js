@@ -1,4 +1,4 @@
-import {HamburgerMenu} from "ui/navigation/main-menu/hamburger-menu";
+import {HamburgerMenu} from "@ui/navigation/main-menu/hamburger-menu";
 
 require('./hamburger-menu');
 

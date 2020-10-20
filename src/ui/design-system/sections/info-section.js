@@ -1,6 +1,6 @@
-import {createStyledComponent} from "ui/components";
-import {PrimaryFont} from "ui/design-system/typography/primary-font";
-import {Text} from "ui/design-system/typography/text";
+import {createStyledComponent} from "@ui/base-component";
+import {PrimaryFont} from "@ui/design-system/typography/primary-font";
+import {Text} from "@ui/design-system/typography/text";
 
 const styled = createStyledComponent(`
   ${PrimaryFont.render(`<slot name="title"></slot>`)}

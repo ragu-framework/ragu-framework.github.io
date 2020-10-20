@@ -1,4 +1,4 @@
-import {registerComponent} from "@ui/components";
+import {registerComponent} from "@ui/base-component";
 import {MainContent} from "@ui/navigation/main-content";
 import {Header} from "@ui/navigation/header";
 import {CodeBlock} from "@ui/design-system/code/code-block";
@@ -121,7 +121,7 @@ export class Home extends StyleSlot {
         ${VerticalSlide.render(`
           ${FrameworkSupport.render(`
             ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/2" target="_blank">Ragu Client</a>`, {checked: true})}
-            ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/1" target="_blank">Ragu Server Adapter</a>`, {checked: true})}
+            ${BooleanIndicator.render(`<a href="#!/react/server/install">Ragu Server Adapter</a>`, {checked: true})}
           `, {
             'framework-name': 'React',
             'framework-logo': reactLogo,

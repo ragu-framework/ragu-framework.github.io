@@ -1,4 +1,4 @@
-import {BaseComponent, registerComponent} from "ui/components";
+import {BaseComponent, registerComponent} from "@ui/base-component";
 
 @registerComponent()
 export class HamburgerMenu extends BaseComponent {

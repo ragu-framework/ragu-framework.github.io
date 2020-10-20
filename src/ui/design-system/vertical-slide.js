@@ -1,5 +1,5 @@
 import {StyleSlot} from "./style-slot";
-import {registerComponent} from "ui/components";
+import {registerComponent} from "@ui/base-component";
 
 @registerComponent()
 export class VerticalSlide extends StyleSlot {

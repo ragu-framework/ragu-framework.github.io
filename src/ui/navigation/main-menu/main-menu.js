@@ -1,5 +1,5 @@
-import {BaseComponent, registerComponent} from "ui/components";
-import {HamburgerMenu} from "ui/navigation/main-menu/hamburger-menu";
+import {BaseComponent, registerComponent} from "@ui/base-component";
+import {HamburgerMenu} from "@ui/navigation/main-menu/hamburger-menu";
 
 @registerComponent()
 export class MainMenu extends BaseComponent {

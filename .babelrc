@@ -19,7 +19,8 @@
       "alias": {
         "@components": "./src/components/",
         "@pages": "./src/pages/",
-        "@style": "./src/style/"
+        "@style": "./src/style/",
+        "@ui": "./src/ui/"
       }
     }]
   ]

@@ -1,4 +1,4 @@
-import {BaseComponent} from "ui/components";
+import {BaseComponent} from "@ui/base-component";
 
 export class StyleSlot extends BaseComponent {
   get template() {

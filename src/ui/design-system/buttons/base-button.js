@@ -1,5 +1,5 @@
-import {StyleSlot} from "ui/design-system/style-slot";
-import {registerComponent} from "ui/components";
+import {StyleSlot} from "@ui/design-system/style-slot";
+import {registerComponent} from "@ui/base-component";
 
 @registerComponent()
 export class BaseButton extends StyleSlot {
