@@ -119,7 +119,7 @@ export class Home extends StyleSlot {
         ${VerticalSlide.render(`
           ${FrameworkSupport.render(`
             ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/2" target="_blank">Ragu Client</a>`, {checked: true})}
-            ${BooleanIndicator.render(`<a href="#!/react/server/install">Ragu Server Adapter</a>`, {checked: true})}
+            ${BooleanIndicator.render(`<a href="#!/ragu-react-server-adapter">Ragu Server Adapter</a>`, {checked: true})}
           `, {
             'framework-name': 'React',
             'framework-logo': reactLogo,
@@ -128,7 +128,7 @@ export class Home extends StyleSlot {
             ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/3" target="_blank">Ragu Client</a>`, {checked: true})}</a>
 
               ${BooleanIndicator.render(`
-                <a href="https://medium.com/@carlosmaniero/transforming-your-vue-js-project-into-micro-frontends-with-server-side-rendering-9cdaab16f5e9"  target="_blank">
+                <a href="#!/ragu-vue-server-adapter">
                   Ragu Server Adapter
                 </a>
               `, {checked: true})}

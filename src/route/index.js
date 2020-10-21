@@ -2,6 +2,7 @@ import {Home} from "@pages/home";
 import {Router} from "director/build/director";
 import {RaguReactServerAdapter} from "@pages/ragu-react-server-adapter";
 import {Page} from "@pages/page";
+import {RaguVueServerAdapter} from "@pages/ragu-vue-server-adapter";
 
 require("../style/variables.css");
 
@@ -24,8 +25,11 @@ const router = Router({
   '\!': () => {
     page.setContent(new Home());
   },
-  '\!/react/server/install': () => {
+  '\!/ragu-react-server-adapter': () => {
     page.setContent(new RaguReactServerAdapter());
+  },
+  '\!/ragu-vue-server-adapter': () => {
+    page.setContent(new RaguVueServerAdapter());
   }
 });
 

@@ -5,13 +5,13 @@ import {MfLoader} from "@ui/components/mf-loader";
 
 
 @registerComponent()
-export class RaguReactServerAdapter extends StyleSlot {
+export class RaguVueServerAdapter extends StyleSlot {
   shadowDOM = false;
 
   get template() {
     return `
     ${MainContent.render(`
-      ${MfLoader.render('', {src: 'https://ragu-react-server-adapter.herokuapp.com/components/installation'})}
+      ${MfLoader.render('', {src: 'https://ragu-vue-server-adapter.herokuapp.com/components/installation'})}
     `)}
     `
   }
