@@ -1,6 +1,5 @@
 import {registerComponent} from "@ui/base-component";
 import {MainContent} from "@ui/navigation/main-content";
-import {Header} from "@ui/navigation/header";
 import {CodeBlock} from "@ui/design-system/code/code-block";
 import {VerticalSlide} from "@ui/design-system/vertical-slide";
 import {ButtonSet} from "@ui/design-system/buttons/button-set";
@@ -32,26 +31,37 @@ export class Home extends StyleSlot {
       color: inherit;
     }
 
-    .footer {
-      margin-top: 20px;
+    .embed-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .embed-container iframe, .embed-container object, .embed-container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
-    .footer a {
-      color: #BF265E;
+    .video-wrapper {
+      background: linear-gradient(122deg, rgba(191,38,94,1) 0%, rgba(255,171,64,1) 100%);
+      margin-top: -40px;
     }
 
-    .footer footer {
-      padding: 20px 0 0;
-      text-align: center;
-      border-top: 1px solid rgba(43, 51, 50, 0.13);
-      margin-top: 20px;
+    @media screen and (max-width: 920px){
+      .video-wrapper {
+        margin: -20px;
+      }
     }
   </style>
 `;
 
   get template() {
     return `
-    ${(MainContent.render(`
+    ${MainContent.render(`
 
       ${MobileStack.render(`
         ${Logo.render(`<h1 slot="title">Ragu</h1><h2 slot="sub-title">Slice your front-end</h2>`)}
@@ -63,7 +73,15 @@ export class Home extends StyleSlot {
           `, {'max-width': '420px'})}
         </div>
       `)}
+    `)}
 
+    <div class="video-wrapper">
+      ${MainContent.render(`
+        <div class='embed-container'><iframe src='https://www.youtube.com/embed/XkV7eRLa32Q' frameborder='0' allowfullscreen></iframe></div>
+      `)}
+    </div>
+
+    ${MainContent.render(`
       <section class="infoSection">
         ${Title1.render(`Using a micro-frontend`)}
 
@@ -145,7 +163,7 @@ export class Home extends StyleSlot {
           })}
         `)}
       </section>
-    `))}
+    `)}
 
     ${TestRaguDom.render()}
 
