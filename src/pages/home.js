@@ -76,9 +76,7 @@ export class Home extends StyleSlot {
     `)}
 
     <div class="video-wrapper">
-      ${MainContent.render(`
-        <div class='embed-container'><iframe src='https://www.youtube.com/embed/XkV7eRLa32Q' frameborder='0' allowfullscreen></iframe></div>
-      `)}
+      <ragu-component src="https://ragu-framework.github.io/ragu-cli/index.json"></ragu-component>
     </div>
 
     ${MainContent.render(`
