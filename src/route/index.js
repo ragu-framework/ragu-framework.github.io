@@ -23,7 +23,7 @@ const page = document.getElementById('app-root').firstChild;
 
 const router = Router({
   '\!': () => {
-    page.setContent(new Home());
+    page.setContent(new Home(), false);
   },
   '\!/ragu-react-server-adapter': () => {
     page.setContent(new RaguReactServerAdapter());

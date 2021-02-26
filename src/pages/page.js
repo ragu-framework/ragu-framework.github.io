@@ -32,12 +32,20 @@ export class Page extends StyleSlot {
   </style>
 `;
 
-  setContent(component) {
+  setContent(component, autoPadding= true) {
     this.childNodes.forEach((el) => {
       if (el.slot !== 'gh-button') {
         el.remove();
       }
     });
+
+    if (autoPadding) {
+      const element = document.createElement('div');
+      element.style.paddingTop = '80px';
+      element.appendChild(component);
+      this.appendChild(element);
+      return;
+    }
 
     this.appendChild(component);
   }
