@@ -11,7 +11,7 @@ export class RaguReactServerAdapter extends StyleSlot {
   get template() {
     return `
     ${MainContent.render(`
-      ${MfLoader.render('', {src: 'https://ragu-react-server-adapter.herokuapp.com/components/installation'})}
+      ${MfLoader.render('', {src: 'https://ragu-framework.github.io/ragu-react-server-adapter/index.json'})}
     `)}
     `
   }
