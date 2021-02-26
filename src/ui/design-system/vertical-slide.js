@@ -32,6 +32,12 @@ export class VerticalSlide extends StyleSlot {
         .scroller ::slotted(*:first-child) {
          margin-left: 20px;
         }
+        
+        @media screen and (min-width: 919px){
+          :host .scroller {
+            overflow: initial;
+          }
+        }
       </style>
     `;
   }
