@@ -49,6 +49,7 @@ export class Home extends StyleSlot {
     .video-wrapper {
       background: linear-gradient(122deg, rgba(191,38,94,1) 0%, rgba(255,171,64,1) 100%);
       margin-top: -40px;
+      min-height: 800px;
     }
 
     @media screen and (max-width: 920px){
