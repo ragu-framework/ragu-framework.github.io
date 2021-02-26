@@ -4,7 +4,6 @@ import {CodeBlock} from "@ui/design-system/code/code-block";
 import {VerticalSlide} from "@ui/design-system/vertical-slide";
 import {ButtonSet} from "@ui/design-system/buttons/button-set";
 import {StyleSlot} from "@ui/design-system/style-slot";
-import {Logo} from "@ui/design-system/logo/logo";
 import {MobileStack} from "@ui/design-system/mobile-stack";
 import {PrimaryButton} from "@ui/design-system/buttons/primary-button";
 import {SecondaryButton} from "@ui/design-system/buttons/secondary-button";
@@ -47,14 +46,61 @@ export class Home extends StyleSlot {
     }
 
     .video-wrapper {
-      background: linear-gradient(122deg, rgba(191,38,94,1) 0%, rgba(255,171,64,1) 100%);
+      background: linear-gradient(86.92deg, #BF265E 5.1%, rgba(255, 255, 255, 0) 97.29%), #f1ab42;
       margin-top: -40px;
       min-height: 800px;
+    }
+    
+    .logo-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 80px 0 50px;
+      align-items: center;
+      margin: 0 auto;
+    }
+    
+    .logo-wrapper h1 {
+      font-family: Poppins, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 96px;
+      color: white;
+      margin: 0;
+      padding-right: 80px;
+      border-right: 1px solid rgba(255, 255, 255, 0.4);
+      text-align: right;
+    }
+    
+    .logo-wrapper h2 {
+      font-family: Lato, sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 30px;
+      margin: 0;
+      padding-left: 80px;
+      color: #FFFFFF;
     }
 
     @media screen and (max-width: 920px){
       .video-wrapper {
         margin: -20px;
+      }
+      
+      .logo-wrapper {
+        grid-template-columns: 1fr;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 80%;
+      }
+      
+      .logo-wrapper h1, .logo-wrapper h2 {
+        padding: 0 0 20px;
+        text-align: center;
+      }
+
+      .logo-wrapper h1 {
+        border-right: 0;
       }
     }
   </style>
@@ -62,21 +108,14 @@ export class Home extends StyleSlot {
 
   get template() {
     return `
-    ${MainContent.render(`
-
-      ${MobileStack.render(`
-        ${Logo.render(`<h1 slot="title">Ragu</h1><h2 slot="sub-title">Slice your front-end</h2>`)}
-
-        <div>
-          ${ButtonSet.render(`
-            ${PrimaryButton.render(`<a href="https://github.com/ragu-framework/ragu#installation" target="_blank">Get started</a>`)}
-            ${SecondaryButton.render(`<a href="https://github.com/ragu-framework/ragu">Github</a>`)}
-          `, {'max-width': '420px'})}
-        </div>
-      `)}
-    `)}
-
     <div class="video-wrapper">
+      ${MainContent.render(`
+          <div class="logo-wrapper">
+            <h1>Ragu</h1>
+            <h2>It was never so simple to deliver a frontend!</h2>
+          </div>
+      `)}
+    
       <ragu-component src="https://ragu-framework.github.io/ragu-cli/index.json"></ragu-component>
     </div>
 
