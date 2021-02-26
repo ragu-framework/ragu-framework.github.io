@@ -79,13 +79,14 @@ export class Home extends StyleSlot {
 
     @media screen and (max-width: 920px){
       .video-wrapper {
-        margin: -20px;
+        padding-top: 100px;
       }
       
       .logo-wrapper {
         grid-template-columns: 1fr;
         padding: 0;
         max-width: 80%;
+        margin-bottom: 20px;
       }
       
       .logo-wrapper h1, .logo-wrapper h2 {

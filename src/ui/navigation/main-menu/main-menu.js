@@ -88,6 +88,12 @@ export class MainMenu extends BaseComponent {
       ::slotted(a:hover) {
         background: rgba(43, 51, 50, 0.08);
       }
+      
+      @media screen and (max-width: 920px){
+        :host nav {
+          display: none;
+        }
+      }
     </style>
     <header>
       <h1>
