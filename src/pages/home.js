@@ -31,6 +31,7 @@ export class Home extends StyleSlot {
       overflow: hidden;
       max-width: 100%;
     }
+
     .embed-container iframe, .embed-container object, .embed-container embed {
       position: absolute;
       top: 0;
@@ -91,9 +92,22 @@ export class Home extends StyleSlot {
       justify-content: space-between;
       text-decoration: none;
     }
+    
+    .ragu-compatibility .language img {
+      transition: transform ease-in-out 0.3s
+    }
+    
+    .ragu-compatibility .language:hover img {
+      transform: rotate(-10deg) scale(1.3);
+    }
 
     .ragu-compatibility .language:not(a) {
       filter: grayscale(1);
+      transition: filter ease-in-out 0.5s
+    }
+    
+    .ragu-compatibility .language:hover {
+      filter: grayscale(0);
     }
 
     .ragu-compatibility h1, .ragu-compatibility h2 {
@@ -168,20 +182,16 @@ export class Home extends StyleSlot {
         ${VerticalSlide.render(`
           <a href="#!/ragu-react-server-adapter" class="language">
             <img src="${reactLogo}" alt="react" />
-            <span>React</span>
           </a>
           <a href="#!/ragu-vue-server-adapter" class="language">
             <img src="${vueLogo}" />
-            <span>Vue</span>
           </a>
           <div class="language">
             <img src="${angularLogo}" />
-            <span>Angular</span>
             <small>(not supported yet)</small>
           </div>
           <div class="language">
             <img src="${customElementsLogo}" />
-            <span>Custom Elements</span>
             <small>(not supported yet)</small>
           </div>
         `, {small: true})}
