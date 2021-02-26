@@ -5,11 +5,10 @@ import {StyleSlot} from "@ui/design-system/style-slot";
 import {Text} from "@ui/design-system/typography/text";
 import {Title1} from "@ui/design-system/typography/title-1";
 import {InfoSection} from "@ui/design-system/sections/info-section";
-import {FrameworkSupport} from "@ui/design-system/framework-support";
 import reactLogo from '../languages-and-frameworks/react.png';
 import vueLogo from '../languages-and-frameworks/vue.png';
+import customElementsLogo from '../languages-and-frameworks/custom-elements.png';
 import angularLogo from '../languages-and-frameworks/angular.png';
-import {BooleanIndicator} from "@ui/design-system/boolean-indicator";
 import {TestRaguDom} from "@ui/components/test-ragu-dom";
 
 
@@ -40,12 +39,13 @@ export class Home extends StyleSlot {
       height: 100%;
     }
 
-    .video-wrapper {
+    .background-wrapper {
       background: linear-gradient(86.92deg, #bf265e 5.1%, rgba(255, 255, 255, 0) 97.29%), #f1ab42;
       margin-top: -40px;
       min-height: 800px;
+      box-shadow: 0 0 75px rgba(0, 0, 0, 0.15);
     }
-    
+
     .logo-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -53,7 +53,7 @@ export class Home extends StyleSlot {
       align-items: center;
       margin: 0 auto;
     }
-    
+
     .logo-wrapper h1 {
       font-family: Poppins, sans-serif;
       font-style: normal;
@@ -65,7 +65,7 @@ export class Home extends StyleSlot {
       border-right: 1px solid rgba(255, 255, 255, 0.4);
       text-align: right;
     }
-    
+
     .logo-wrapper h2 {
       font-family: Lato, sans-serif;
       font-style: normal;
@@ -77,18 +77,56 @@ export class Home extends StyleSlot {
       color: #FFFFFF;
     }
 
+    .ragu-compatibility {
+      font-family: Poppins, sans-serif;
+      padding: 80px 0;
+      font-weight: 300;
+      font-size: 14px;
+    }
+
+    .ragu-compatibility .language {
+      margin-top: 60px;
+      display: grid;
+      text-align: center;
+      justify-content: space-between;
+      text-decoration: none;
+    }
+
+    .ragu-compatibility .language:not(a) {
+      filter: grayscale(1);
+    }
+
+    .ragu-compatibility h1, .ragu-compatibility h2 {
+      text-align: center;
+      margin: 0;
+    }
+
+    .ragu-compatibility h1 {
+      font-family: Lato, sans-serif;
+      font-weight: 300;
+      font-size: 96px;
+      color: #2C3332;
+    }
+
+    .ragu-compatibility h2 {
+      font-family: Poppins, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 48px;
+    }
+
     @media screen and (max-width: 920px){
-      .video-wrapper {
+      .background-wrapper {
         padding-top: 100px;
       }
-      
+
       .logo-wrapper {
         grid-template-columns: 1fr;
         padding: 0;
         max-width: 80%;
         margin-bottom: 20px;
       }
-      
+
       .logo-wrapper h1, .logo-wrapper h2 {
         padding: 0 0 20px;
         text-align: center;
@@ -97,24 +135,58 @@ export class Home extends StyleSlot {
       .logo-wrapper h1 {
         border-right: 0;
       }
+
+      .ragu-compatibility h1 {
+        font-size: 48px;
+      }
+
+      .ragu-compatibility h2 {
+        font-size: 24px;
+      }
     }
   </style>
 `;
 
   get template() {
     return `
-    <div class="video-wrapper">
+    <div class="background-wrapper">
       ${MainContent.render(`
           <div class="logo-wrapper">
             <h1>Ragu</h1>
             <h2>It was never so simple to deliver a frontend!</h2>
           </div>
       `)}
-    
+
       <ragu-component src="https://ragu-framework.github.io/ragu-cli/index.json"></ragu-component>
     </div>
 
     ${MainContent.render(`
+      <section id="how-to" class="infoSection ragu-compatibility">
+        <h1>Ready to Start?</h1>
+        <h2>Pick Your Framework!</h2>
+
+        ${VerticalSlide.render(`
+          <a href="#!/ragu-react-server-adapter" class="language">
+            <img src="${reactLogo}" alt="react" />
+            <span>React</span>
+          </a>
+          <a href="#!/ragu-vue-server-adapter" class="language">
+            <img src="${vueLogo}" />
+            <span>Vue</span>
+          </a>
+          <div class="language">
+            <img src="${angularLogo}" />
+            <span>Angular</span>
+            <small>(not supported yet)</small>
+          </div>
+          <div class="language">
+            <img src="${customElementsLogo}" />
+            <span>Custom Elements</span>
+            <small>(not supported yet)</small>
+          </div>
+        `, {small: true})}
+      </section>
+
       <section class="infoSection">
         ${Title1.render(`More reasons to use?`)}
 
@@ -146,43 +218,6 @@ export class Home extends StyleSlot {
               </p>
             </div>
           `)}
-        `)}
-      </section>
-
-      <section id="how-to" class="infoSection ragu-compatibility">
-        ${Title1.render(`You don’t need to rewrite your entire front-end. Ragu is compatible with:`)}
-        ${Text.render(`<p>
-          Ragu helps you to give more autonomy to your teams and also it is helpful to legacy replacement as it
-          requires only few configuration to expose you front-end as micro-frontends.
-        </p>`)}
-
-        ${VerticalSlide.render(`
-          ${FrameworkSupport.render(`
-            ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/2" target="_blank">Ragu Client</a>`, {checked: true})}
-            ${BooleanIndicator.render(`<a href="#!/ragu-react-server-adapter">Ragu Server Adapter</a>`, {checked: true})}
-          `, {
-            'framework-name': 'React',
-            'framework-logo': reactLogo,
-          })}
-          ${FrameworkSupport.render(`
-            ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/3" target="_blank">Ragu Client</a>`, {checked: true})}</a>
-
-              ${BooleanIndicator.render(`
-                <a href="#!/ragu-vue-server-adapter">
-                  Ragu Server Adapter
-                </a>
-              `, {checked: true})}
-          `, {
-            'framework-name': 'Vue',
-            'framework-logo': vueLogo,
-          })}
-          ${FrameworkSupport.render(`
-              ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/4" target="_blank">Ragu Client</a>`, {checked: true})}
-              ${BooleanIndicator.render(`<a href="https://github.com/ragu-framework/ragu/issues/5" target="_blank">Ragu Server Adapter</a>`, {checked: false})}
-          `, {
-            'framework-name': 'Angular 2+',
-            'framework-logo': angularLogo,
-          })}
         `)}
       </section>
     `)}

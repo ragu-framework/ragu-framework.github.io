@@ -17,13 +17,14 @@ export class VerticalSlide extends StyleSlot {
           box-sizing: border-box;
           margin-left: -20px;
           display: flex;
+          justify-content: center;
         }
         .scroller {
           display: flex;
           overflow: auto;
         }
         .scroller ::slotted(*) {
-          min-width: 240px;
+          min-width: ${this.getAttribute('small') ? '130px' : '240px'};
           flex-basis: 0;
           flex-grow: 1;
           margin-left: 40px;
