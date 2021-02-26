@@ -1,5 +1,4 @@
 import {BaseComponent, registerComponent} from "@ui/base-component";
-import {HamburgerMenu} from "@ui/navigation/main-menu/hamburger-menu";
 
 @registerComponent()
 export class MainMenu extends BaseComponent {
@@ -10,8 +9,16 @@ export class MainMenu extends BaseComponent {
         width: 100%;
         top: 0;
         left: 0;
-        background: white;
+        background: linear-gradient(86.92deg, rgba(215,55,113,0.95) 5.1%, rgba(255, 255, 255, 0) 97.29%), rgba(246,183,41,0.95);
+        color: white;
         z-index: 1;
+      }
+      
+      @supports (backdrop-filter: blur(6px)) {
+        :host {
+          background: linear-gradient(86.92deg, rgba(215,55,113,0.6) 5.1%, rgba(255, 255, 255, 0) 97.29%), rgba(246,183,41,0.6);
+          backdrop-filter: blur(6px);
+        }
       }
 
       header {
@@ -34,23 +41,26 @@ export class MainMenu extends BaseComponent {
         text-decoration: none;
       }
       
-      nav {
-        position: fixed;
-        top: 66px;
-        right: max(-100%, -320px);
-        height: 100%;
-        background: rgba(255, 255, 255, 0.8);
-        width: 80%;
-        max-width: 320px;
-        backdrop-filter: blur(5px);
-        padding: 20px;
-        box-sizing: border-box;
-        border-left: 1px solid rgba(43, 51, 50, 0.13);
-        border-top: 1px solid #ffffff;
-        transition-duration: 1s;
+      nav ul {
+        list-style: none;
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 20px;
+        padding: 0;
       }
-      nav.open {
-        right: 0;
+      
+      nav ul a {
+        color: white;
+        text-decoration: none;
+        font-family: Poppins, sans-serif;
+        font-weight: normal;
+        font-size: 14px;
+        text-align: center;
+        width: 190px;
+        display: block;
+        padding: 5px 0;
+        border-radius: 20px;
+        background: rgba(191, 38, 97, 0.2);
       }
 
       .right-nav {
@@ -80,18 +90,27 @@ export class MainMenu extends BaseComponent {
       }
     </style>
     <header>
-        <h1>
-            <a href="#!">Ragu Framework</a>
-        </h1>
-        
-        <nav>
-            <slot name="link"></slot>
-        </nav>
-        
-        <div class="right-nav">
-          <slot name="right-nav"></slot>
-          ${HamburgerMenu.render()}
-        </div>
+      <h1>
+        <a href="#!">Ragu Framework</a>
+      </h1>
+      
+      <nav>
+        <ul>
+          <li>
+            <a href="#!">Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/ragu-framework/ragu/issues" target="_blank">Ask a Question</a>
+          </li>
+          <li>
+            <a href="https://github.com/ragu-framework/ragu" target="_blank">Github</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="right-nav">
+        <slot name="right-nav"></slot>
+      </div>
     </header>
   `
 

@@ -1,12 +1,7 @@
 import {registerComponent} from "@ui/base-component";
 import {MainContent} from "@ui/navigation/main-content";
-import {CodeBlock} from "@ui/design-system/code/code-block";
 import {VerticalSlide} from "@ui/design-system/vertical-slide";
-import {ButtonSet} from "@ui/design-system/buttons/button-set";
 import {StyleSlot} from "@ui/design-system/style-slot";
-import {MobileStack} from "@ui/design-system/mobile-stack";
-import {PrimaryButton} from "@ui/design-system/buttons/primary-button";
-import {SecondaryButton} from "@ui/design-system/buttons/secondary-button";
 import {Text} from "@ui/design-system/typography/text";
 import {Title1} from "@ui/design-system/typography/title-1";
 import {InfoSection} from "@ui/design-system/sections/info-section";
@@ -46,7 +41,7 @@ export class Home extends StyleSlot {
     }
 
     .video-wrapper {
-      background: linear-gradient(86.92deg, #BF265E 5.1%, rgba(255, 255, 255, 0) 97.29%), #f1ab42;
+      background: linear-gradient(86.92deg, #bf265e 5.1%, rgba(255, 255, 255, 0) 97.29%), #f1ab42;
       margin-top: -40px;
       min-height: 800px;
     }
@@ -54,7 +49,7 @@ export class Home extends StyleSlot {
     .logo-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      padding: 80px 0 50px;
+      padding: 180px 0 90px;
       align-items: center;
       margin: 0 auto;
     }
@@ -90,7 +85,6 @@ export class Home extends StyleSlot {
       .logo-wrapper {
         grid-template-columns: 1fr;
         padding: 0;
-        margin: 0 auto;
         max-width: 80%;
       }
       
@@ -154,7 +148,7 @@ export class Home extends StyleSlot {
         `)}
       </section>
 
-      <section class="infoSection ragu-compatibility">
+      <section id="how-to" class="infoSection ragu-compatibility">
         ${Title1.render(`You don’t need to rewrite your entire front-end. Ragu is compatible with:`)}
         ${Text.render(`<p>
           Ragu helps you to give more autonomy to your teams and also it is helpful to legacy replacement as it

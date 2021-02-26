@@ -11,7 +11,7 @@ export class MainContent extends BaseComponent {
     shadowRoot.innerHTML = `
       <style>
         :host {
-           margin: 85px auto 20px;
+           margin: 0 auto 0;
            display: block;
            padding: 0 20px;
            max-width: 920px;
