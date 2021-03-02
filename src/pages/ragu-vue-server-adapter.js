@@ -11,7 +11,7 @@ export class RaguVueServerAdapter extends StyleSlot {
   get template() {
     return `
     ${MainContent.render(`
-      ${MfLoader.render('', {src: 'https://ragu-vue-server-adapter.herokuapp.com/components/installation'})}
+      ${MfLoader.render('', {src: 'https://ragu-framework.github.io/ragu-vue-server-adapter/index.json'})}
     `)}
     `
   }
