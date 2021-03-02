@@ -85,6 +85,18 @@ export class Home extends StyleSlot {
       font-size: 14px;
     }
 
+    @keyframes compatibility-animation {
+      0% {transform: rotate(-10deg);}
+      50% {transform: rotate(10deg);}
+      100% {transform: rotate(-10deg);}
+    }
+
+    @keyframes compatibility-animation-odd {
+      0% {transform: rotate(10deg);}
+      50% {transform: rotate(-10deg);}
+      100% {transform: rotate(10deg);}
+    }
+
     .ragu-compatibility .language {
       margin-top: 60px;
       display: grid;
@@ -92,12 +104,21 @@ export class Home extends StyleSlot {
       justify-content: space-between;
       text-decoration: none;
     }
-    
+
     .ragu-compatibility .language img {
-      transition: transform ease-in-out 0.3s
+      transition: transform ease-in-out 3s;
     }
-    
+
+    .ragu-compatibility .language:not(:hover) img {
+      animation: 1s compatibility-animation infinite;
+    }
+
+    .ragu-compatibility .language:not(:hover):nth-child(odd) img {
+      animation: 1s compatibility-animation-odd infinite;
+    }
+
     .ragu-compatibility .language:hover img {
+      animation: none;
       transform: rotate(-10deg) scale(1.3);
     }
 
@@ -105,9 +126,14 @@ export class Home extends StyleSlot {
       filter: grayscale(1);
       transition: filter ease-in-out 0.5s
     }
-    
+
     .ragu-compatibility .language:hover {
       filter: grayscale(0);
+    }
+
+    .ragu-compatibility h3 {
+      font-size: 1rem;
+      margin: 0;
     }
 
     .ragu-compatibility h1, .ragu-compatibility h2 {
@@ -177,21 +203,25 @@ export class Home extends StyleSlot {
     ${MainContent.render(`
       <section id="how-to" class="infoSection ragu-compatibility">
         <h1>Ready to Start?</h1>
-        <h2>Pick Your Framework!</h2>
+        <h2>Pick Your Framework:</h2>
 
         ${VerticalSlide.render(`
           <a href="#!/ragu-react-server-adapter" class="language">
             <img src="${reactLogo}" alt="react" />
+            <h3>React Docs</h3>
           </a>
           <a href="#!/ragu-vue-server-adapter" class="language">
             <img src="${vueLogo}" />
+            <h3>Vue Docs</h3>
           </a>
           <div class="language">
             <img src="${angularLogo}" />
+            <h3>Angular</h3>
             <small>(not supported yet)</small>
           </div>
           <div class="language">
             <img src="${customElementsLogo}" />
+            <h3>Custom Elements</h3>
             <small>(not supported yet)</small>
           </div>
         `, {small: true})}
