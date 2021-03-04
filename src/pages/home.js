@@ -148,6 +148,14 @@ export class Home extends StyleSlot {
       color: #2C3332;
     }
 
+    .core-concepts {
+      background: linear-gradient(86.92deg, #61DAFB 5.1%, rgba(255, 255, 255, 0) 97.29%), #41B883;
+      box-shadow: 0 0 75px rgba(0, 0, 0, 0.15);
+      padding-top: 5rem;
+      margin-bottom: 5rem;
+      display: flex;
+    }
+
     .ragu-compatibility h2 {
       font-family: Poppins, sans-serif;
       font-style: normal;
@@ -226,41 +234,11 @@ export class Home extends StyleSlot {
           </div>
         `, {small: true})}
       </section>
-
-      <section class="infoSection">
-        ${Title1.render(`More reasons to use?`)}
-
-        ${VerticalSlide.render(`
-          ${InfoSection.render(`
-            <h2 slot="title">🚀 Server Side Rendering</h2>
-            <div slot="content">
-              <p>Ragu micro-frontends can be rendered at the server side improving the user experience and the load time.</p>
-              <p>Every micro-frontend has its own endpoint witch can be used to pre-fetch micro-frontends. Check it out the playground section.</p>
-            </div>
-          `)}
-
-          ${InfoSection.render(`
-            <h2 slot="title">📦 Build System</h3></h2>
-            <div slot="content">
-              <p>Ragu Server comes with a build system on top of webpack which you can extend though the ragu server configuration.</p>
-              <p>There are adapters listed bellow witch makes the integration with your favorite framework more straightforward.</p>
-            </div>
-          `)}
-
-          ${InfoSection.render(`
-            <h2 slot="title">🤝 Coupleless Integration</h3></h2>
-            <div slot="content">
-              <p>
-                To share code across projects using a npm package is hard to manage and requires a full project build to apply changes.
-              </p>
-              <p>
-                Ragu enables independent deployment extending the concept of micro-services to the front-end.
-              </p>
-            </div>
-          `)}
-        `)}
-      </section>
     `)}
+
+    <section class="core-concepts">
+      <ragu-component src="https://ragu-framework.github.io/ragu/index.json"></ragu-component>
+    </section>
 
     ${TestRaguDom.render()}
 
