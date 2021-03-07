@@ -237,7 +237,7 @@ export class Home extends StyleSlot {
     `)}
 
     <section class="core-concepts">
-      <ragu-component src="https://ragu-framework.github.io/ragu/index.json"></ragu-component>
+      <ragu-component src="https://ragu-framework.github.io/ragu/main-features-mfe.json"></ragu-component>
     </section>
 
     ${TestRaguDom.render()}
