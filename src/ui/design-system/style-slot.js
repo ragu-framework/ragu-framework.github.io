@@ -7,8 +7,17 @@ export class StyleSlot extends BaseComponent {
     `;
   }
 
+  afterConnect() {
+
+  }
+
   connectedCallback() {
     this.shadowDOM && this.attachShadow({mode: "open"});
+    this.render();
+  }
+
+  render() {
     this.element.innerHTML = `${this.styleTemplate || ''}${this.template}`
+    this.afterConnect();
   }
 }

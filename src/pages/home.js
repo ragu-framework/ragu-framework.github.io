@@ -10,6 +10,7 @@ import vueLogo from '../languages-and-frameworks/vue.png';
 import customElementsLogo from '../languages-and-frameworks/custom-elements.png';
 import angularLogo from '../languages-and-frameworks/angular.png';
 import {TestRaguDom} from "@ui/components/test-ragu-dom";
+import {MfLoader} from "@ui/components/mf-loader";
 
 
 @registerComponent()
@@ -195,6 +196,35 @@ export class Home extends StyleSlot {
   </style>
 `;
 
+  renderQuickStart(html) {
+    let element = this.querySelector('#quick-starter-placeholder');
+
+    if (html) {
+      const y = element.getBoundingClientRect().top + window.scrollY - 50;
+
+      window.scroll({
+        top: y,
+        behavior: 'smooth'
+      });
+    }
+    element.innerHTML = html;
+  }
+
+  afterConnect() {
+
+    this.querySelector('#react-logo').addEventListener('click', (e) => {
+      e.preventDefault();
+      if (this.showingReactQuickStart) {
+        this.showingReactQuickStart = false;
+        this.renderQuickStart('');
+        return;
+      }
+
+      this.showingReactQuickStart = true;
+      this.renderQuickStart(MfLoader.render('', {src: 'https://ragu-framework.github.io/ragu-react-server-adapter/quick-start.json'}))
+    });
+  }
+
   get template() {
     return `
     <div class="background-wrapper">
@@ -214,7 +244,7 @@ export class Home extends StyleSlot {
         <h2>Pick Your Framework:</h2>
 
         ${VerticalSlide.render(`
-          <a href="#!/ragu-react-server-adapter" class="language">
+          <a href="#" id="react-logo" class="language">
             <img src="${reactLogo}" alt="react" />
             <h3>React Docs</h3>
           </a>
@@ -235,6 +265,8 @@ export class Home extends StyleSlot {
         `, {small: true})}
       </section>
     `)}
+
+    <div id="quick-starter-placeholder"></div>
 
     <section class="core-concepts">
       <ragu-component src="https://ragu-framework.github.io/ragu/main-features-mfe.json"></ragu-component>
