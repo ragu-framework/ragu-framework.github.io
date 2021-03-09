@@ -4,7 +4,6 @@ import {VerticalSlide} from "@ui/design-system/vertical-slide";
 import {StyleSlot} from "@ui/design-system/style-slot";
 import {Text} from "@ui/design-system/typography/text";
 import {Title1} from "@ui/design-system/typography/title-1";
-import {InfoSection} from "@ui/design-system/sections/info-section";
 import reactLogo from '../languages-and-frameworks/react.png';
 import vueLogo from '../languages-and-frameworks/vue.png';
 import customElementsLogo from '../languages-and-frameworks/custom-elements.png';
@@ -200,7 +199,7 @@ export class Home extends StyleSlot {
     let element = this.querySelector('#quick-starter-placeholder');
 
     if (html) {
-      const y = element.getBoundingClientRect().top + window.scrollY - 50;
+      const y = element.getBoundingClientRect().top + window.scrollY - 65;
 
       window.scroll({
         top: y,
@@ -211,17 +210,22 @@ export class Home extends StyleSlot {
   }
 
   afterConnect() {
+    this.configureFrameworkQuickStartAction('react', 'https://ragu-framework.github.io/ragu-react-server-adapter/quick-start.json');
+    this.configureFrameworkQuickStartAction('vue', 'https://ragu-framework.github.io/ragu-vue-server-adapter/quick-start.json');
+  }
 
-    this.querySelector('#react-logo').addEventListener('click', (e) => {
+  configureFrameworkQuickStartAction(framework, frameworkQuickStartURL) {
+    this.querySelector(`#${framework}-logo`).addEventListener('click', (e) => {
       e.preventDefault();
-      if (this.showingReactQuickStart) {
-        this.showingReactQuickStart = false;
+
+      if (this.showQuickStartFor === framework) {
+        this.showQuickStartFor = '';
         this.renderQuickStart('');
         return;
       }
 
-      this.showingReactQuickStart = true;
-      this.renderQuickStart(MfLoader.render('', {src: 'https://ragu-framework.github.io/ragu-react-server-adapter/quick-start.json'}))
+      this.showingReactQuickStart = framework;
+      this.renderQuickStart(MfLoader.render('', {src: frameworkQuickStartURL}))
     });
   }
 
@@ -248,7 +252,7 @@ export class Home extends StyleSlot {
             <img src="${reactLogo}" alt="react" />
             <h3>React Docs</h3>
           </a>
-          <a href="#!/ragu-vue-server-adapter" class="language">
+          <a href="#" id="vue-logo" class="language">
             <img src="${vueLogo}" />
             <h3>Vue Docs</h3>
           </a>
