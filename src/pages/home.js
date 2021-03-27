@@ -239,7 +239,7 @@ export class Home extends StyleSlot {
           </div>
       `)}
 
-      <ragu-component src="https://ragu-framework.github.io/ragu-cli/index.json"></ragu-component>
+      <ragu-component src="https://ragu-framework.github.io/ragu-cli/mfe.json"></ragu-component>
     </div>
 
     ${MainContent.render(`
