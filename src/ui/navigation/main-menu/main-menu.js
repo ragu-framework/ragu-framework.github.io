@@ -90,7 +90,13 @@ export class MainMenu extends BaseComponent {
       }
       
       @media screen and (max-width: 920px){
-        :host nav {
+        :host nav li:not(:first-child) {
+          display: none;
+        }
+      }
+      
+      @media screen and (max-width: 500px){
+        :host .right-nav {
           display: none;
         }
       }
@@ -103,7 +109,7 @@ export class MainMenu extends BaseComponent {
       <nav>
         <ul>
           <li>
-            <a href="#!">Home</a>
+            <a href="/docs" target="_blank">Documentation</a>
           </li>
           <li>
             <a href="https://github.com/ragu-framework/ragu/issues" target="_blank">Ask a Question</a>
